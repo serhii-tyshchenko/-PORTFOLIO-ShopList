@@ -22,8 +22,8 @@ class Firebase {
     this.db = firebase.firestore();
 
     this.rootCollection = 'data';
-    this.dataCollection = 'shopping-list';
     this.settingsCollection = 'settings';
+    this.dataCollection = 'shopping-list';
     this.commonSettingsDoc = 'common';
   }
 
@@ -35,31 +35,31 @@ class Firebase {
 
     signOut = () => this.auth.signOut();
 
-    addItem = (userID, item) => this.db
+    addItem = (userID, item, dataCollection = this.dataCollection) => this.db
       .collection(this.rootCollection)
       .doc(userID)
-      .collection(this.dataCollection)
+      .collection(dataCollection)
       .doc(item.id)
       .set(item);
 
-    updateItem = (userID, data) => this.db
+    updateItem = (userID, data, dataCollection = this.dataCollection) => this.db
       .collection(this.rootCollection)
       .doc(userID)
-      .collection(this.dataCollection)
+      .collection(dataCollection)
       .doc(data.id)
       .set(data, { merge: true });
 
-    removeItem = (userID, itemId) => this.db
+    removeItem = (userID, itemId, dataCollection = this.dataCollection) => this.db
       .collection(this.rootCollection)
       .doc(userID)
-      .collection(this.dataCollection)
+      .collection(dataCollection)
       .doc(itemId)
       .delete();
 
-    getItems = (userID) => this.db
+    getItems = (userID, dataCollection = this.dataCollection) => this.db
       .collection(this.rootCollection)
       .doc(userID)
-      .collection(this.dataCollection)
+      .collection(dataCollection)
       .get();
 
     getSettings = (userID) => this.db
