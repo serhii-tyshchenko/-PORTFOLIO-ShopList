@@ -1,9 +1,13 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeItem, updateItem, addItem } from 'store/actions';
+import {
+  removeItem, updateItem, addItem, addSuggestion,
+} from 'store/actions';
 import { getStrings } from 'assets/localization';
 import { ShoppingList } from '../components';
+
+const itemAlreadyExist = (arr, value) => arr.some((el) => el.title.toUpperCase() === value.toUpperCase());
 
 const ShoppingListContainer = () => {
   const dispatch = useDispatch();
@@ -13,12 +17,15 @@ const ShoppingListContainer = () => {
   const STR = getStrings(language);
 
   function handleAddClick(title) {
-    const newItem = {
-      id: uuidv4(),
-      title,
-      isCompleted: false,
-    };
-    dispatch(addItem(userId, newItem));
+    if (!itemAlreadyExist(data, title)) {
+      const newItem = {
+        id: uuidv4(),
+        title,
+        isCompleted: false,
+      };
+      dispatch(addItem(userId, newItem));
+      dispatch(addSuggestion(userId, { id: newItem.id, title: newItem.title }));
+    }
   }
   function handleCompleteClick(evt) {
     const { id } = evt.target.closest('li');
