@@ -9,7 +9,8 @@ const AuthBtn = () => {
   const isLogged = useSelector((state) => state.user.isLogged);
   const { language } = useSelector((state) => state.settings);
   const STR = getStrings(language);
-  const icon = isLogged ? 'user' : 'user-o';
+  const btnIcon = isLogged ? 'user' : 'user-o';
+  const btnTitle = isLogged ? STR.SIGN_OUT : STR.SIGN_IN;
   function handleLogInClick() {
     if (isLogged) {
       dispatch(signOut());
@@ -17,7 +18,14 @@ const AuthBtn = () => {
       dispatch(showModal({ modalName: 'auth', data: null }));
     }
   }
-  return <UIIconButton extraClassName="login__btn" icon={icon} onClick={handleLogInClick} />;
+  return (
+    <UIIconButton
+      extraClassName="login__btn"
+      icon={btnIcon}
+      title={btnTitle}
+      onClick={handleLogInClick}
+    />
+  );
 };
 
 export { AuthBtn };

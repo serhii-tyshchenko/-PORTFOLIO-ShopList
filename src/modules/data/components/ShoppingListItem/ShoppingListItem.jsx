@@ -25,7 +25,7 @@ const ShoppingListItem = (props) => {
         onBlur={onBlur}
         maxLength="50"
       />
-      <UIIconButton id={id} icon="trash" onClick={onRemoveClick} />
+      <UIIconButton id={id} icon="cancel" onClick={onRemoveClick} />
     </li>
   );
 };
