@@ -12,17 +12,7 @@ export const suggestions = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case ADD_SUGGESTION:
-      return [...state, payload].sort((a, b) => {
-        const nameA = a.title.toUpperCase();
-        const nameB = b.title.toUpperCase();
-        if (nameA < nameB) {
-          return -1;
-        }
-        if (nameA > nameB) {
-          return 1;
-        }
-        return 0;
-      });
+      return [...state, payload];
 
     case UPDATE_SUGGESTION:
       return state.map((item) => (item.id === payload.id ? { ...item, ...payload } : item));

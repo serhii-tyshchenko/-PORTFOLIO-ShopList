@@ -2,7 +2,7 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  removeItem, updateItem, addItem, addSuggestion,
+  removeItem, updateItem, addItem, addSuggestion, updateSuggestion,
 } from 'store/actions';
 import { getStrings } from 'assets/localization';
 import { ShoppingList } from '../components';
@@ -13,6 +13,7 @@ const ShoppingListContainer = () => {
   const dispatch = useDispatch();
   const userId = useSelector((state) => state.user.uid);
   const data = useSelector((state) => state.data);
+  const suggestions = useSelector((state) => state.suggestions);
   const { language } = useSelector((state) => state.settings);
   const STR = getStrings(language);
 
@@ -24,7 +25,9 @@ const ShoppingListContainer = () => {
         isCompleted: false,
       };
       dispatch(addItem(userId, newItem));
-      dispatch(addSuggestion(userId, { id: newItem.id, title: newItem.title }));
+      if (!itemAlreadyExist(suggestions, title)) {
+        dispatch(addSuggestion(userId, { id: newItem.id, title, inList: true }));
+      }
     }
   }
   function handleCompleteClick(evt) {
@@ -39,7 +42,10 @@ const ShoppingListContainer = () => {
   }
   function handleRemoveClick(evt) {
     const { id } = evt.target.closest('li');
+    const title = evt.target.previousSibling.value;
     dispatch(removeItem(userId, id));
+    const sugItem = suggestions.find((item) => item.title === title);
+    dispatch(updateSuggestion(userId, { id: sugItem.id, inList: false }));
   }
 
   return (

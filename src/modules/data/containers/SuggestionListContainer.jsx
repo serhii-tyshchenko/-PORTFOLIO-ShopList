@@ -7,16 +7,30 @@ import { SuggestionList } from '../components';
 const SuggestionListContainer = () => {
   const dispatch = useDispatch();
   const userId = useSelector((state) => state.user.uid);
-  const data = useSelector((state) => state.suggestions);
+  const data = useSelector((state) => state.suggestions
+    .filter((item) => item.inList !== true)
+    .sort((a, b) => {
+      const nameA = a.title.toUpperCase();
+      const nameB = b.title.toUpperCase();
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    }));
 
   function handleAddClick(evt) {
     const title = evt.target.nextSibling.value;
+    const { id } = evt.target.closest('li');
     const newItem = {
       id: uuidv4(),
       title,
       isCompleted: false,
     };
     dispatch(addItem(userId, newItem));
+    dispatch(updateSuggestion(userId, { id, inList: true }));
   }
   function handleBlur(evt) {
     const { id } = evt.target.closest('li');
