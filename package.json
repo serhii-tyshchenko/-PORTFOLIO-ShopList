@@ -1,9 +1,9 @@
 {
-  "name": "react-app-template",
-  "homepage": "https://serhii-tyshchenko.github.io/React-CRUD-App-Template/",
+  "name": "shopping-list",
+  "homepage": "https://serhii-tyshchenko.github.io/ShoppingList/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/serhii-tyshchenko/React-CRUD-App-Template.git"
+    "url": "https://github.com/serhii-tyshchenko/ShoppingList"
   },
   "version": "0.1.0",
   "private": true,

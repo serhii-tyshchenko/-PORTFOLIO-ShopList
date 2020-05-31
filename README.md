@@ -1,4 +1,4 @@
-# REACT-CRUD-App-Template
+# My Shopping List
 
 ## Features
 
