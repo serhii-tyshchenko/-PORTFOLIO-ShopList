@@ -1,28 +1,26 @@
 import React from 'react';
 import { UIIconButton } from 'modules/ui';
-import './ToDoListItem.scss';
+import './ShoppingListItem.scss';
 
-const ToDoListItem = (props) => {
+const ShoppingListItem = (props) => {
   const {
     data: { id, title, isCompleted },
     onCompleteClick,
     onRemoveClick,
-    onEditClick,
   } = props;
 
   return (
-    <li id={id} className="todo-list__item">
+    <li id={id} className="shopping-list__item">
       <input
         type="checkbox"
-        className="todo-list__item-cb"
+        className="shopping-list__item-cb"
         checked={isCompleted}
         onChange={onCompleteClick}
       />
-      <span className="todo-list__item-title">{title}</span>
-      <UIIconButton id={id} icon="pencil" onClick={onEditClick} />
+      <span className="shopping-list__item-title">{title}</span>
       <UIIconButton id={id} icon="trash" onClick={onRemoveClick} />
     </li>
   );
 };
 
-export { ToDoListItem };
+export { ShoppingListItem };

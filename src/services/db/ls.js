@@ -1,4 +1,4 @@
-const keyName = 'RCAT';
+const keyName = 'MyShoppingList';
 
 export const loadState = () => {
   try {

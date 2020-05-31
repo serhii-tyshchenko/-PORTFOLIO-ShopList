@@ -1,0 +1,1 @@
+export { ShoppingListContainer } from './ShoppingListContainer';

@@ -7,7 +7,7 @@ const Header = () => (
   <header className="header">
     <div className="header__content wrapper">
       <a href="/" className="header__logo">
-        Logo
+        ShoppingList
       </a>
       <div className="header__menu">
         <ThemeToggler />

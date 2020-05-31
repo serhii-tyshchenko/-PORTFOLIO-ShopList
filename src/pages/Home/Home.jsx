@@ -1,11 +1,10 @@
 import React from 'react';
-import { ToDoListContainer } from 'modules/todos';
+import { ShoppingListContainer } from 'modules/data';
 import { BaseLayout } from '../_Layout';
 
 const Home = () => (
   <BaseLayout>
-    <h1>ToDo List</h1>
-    <ToDoListContainer />
+    <ShoppingListContainer />
   </BaseLayout>
 );
 
