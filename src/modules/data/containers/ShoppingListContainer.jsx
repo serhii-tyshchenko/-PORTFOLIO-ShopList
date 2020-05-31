@@ -12,7 +12,7 @@ const ShoppingListContainer = () => {
   const { language } = useSelector((state) => state.settings);
   const STR = getStrings(language);
 
-  function handleAddItemClick(title) {
+  function handleAddClick(title) {
     const newItem = {
       id: uuidv4(),
       title,
@@ -25,8 +25,10 @@ const ShoppingListContainer = () => {
     const isCompleted = evt.target.checked;
     dispatch(updateItem(userId, { id, isCompleted }));
   }
-  function handleEditClick(evt) {
+  function handleBlur(evt) {
     const { id } = evt.target.closest('li');
+    const title = evt.target.value;
+    dispatch(updateItem(userId, { id, title }));
   }
   function handleRemoveClick(evt) {
     const { id } = evt.target.closest('li');
@@ -39,8 +41,8 @@ const ShoppingListContainer = () => {
         data={data}
         onCompleteClick={handleCompleteClick}
         onRemoveClick={handleRemoveClick}
-        onAddItemClick={handleAddItemClick}
-        onEditClick={handleEditClick}
+        onAddClick={handleAddClick}
+        onBlur={handleBlur}
         STR={STR}
       />
     </>

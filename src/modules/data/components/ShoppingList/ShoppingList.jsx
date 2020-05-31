@@ -3,15 +3,10 @@ import { ShoppingListItem, ShoppingListForm } from 'modules/data';
 import './ShoppingList.scss';
 
 const ShoppingList = ({
-  data,
-  onCompleteClick,
-  onRemoveClick,
-  onEditClick,
-  onAddItemClick,
-  STR,
+  data, onCompleteClick, onRemoveClick, onBlur, onAddClick, STR,
 }) => (
   <div className="shopping-list">
-    <ShoppingListForm onSubmit={onAddItemClick} STR={STR} />
+    <ShoppingListForm onSubmit={onAddClick} STR={STR} />
     <ul className="shopping-list__list">
       {data.map((item) => (
         <ShoppingListItem
@@ -19,7 +14,7 @@ const ShoppingList = ({
           data={item}
           onCompleteClick={onCompleteClick}
           onRemoveClick={onRemoveClick}
-          onEditClick={onEditClick}
+          onBlur={onBlur}
         />
       ))}
     </ul>

@@ -22,6 +22,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/" exact strict component={Home} />
+          <Route path="/ShoppingList" exact strict component={Home} />
           <Route path="*" exact strict component={NotFound} />
         </Switch>
         <AuthContainer />

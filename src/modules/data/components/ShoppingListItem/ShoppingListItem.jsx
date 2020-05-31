@@ -7,6 +7,7 @@ const ShoppingListItem = (props) => {
     data: { id, title, isCompleted },
     onCompleteClick,
     onRemoveClick,
+    onBlur,
   } = props;
 
   return (
@@ -17,7 +18,13 @@ const ShoppingListItem = (props) => {
         checked={isCompleted}
         onChange={onCompleteClick}
       />
-      <span className="shopping-list__item-title">{title}</span>
+      <input
+        type="text"
+        className="shopping-list__item-title"
+        defaultValue={title}
+        onBlur={onBlur}
+        maxLength="50"
+      />
       <UIIconButton id={id} icon="trash" onClick={onRemoveClick} />
     </li>
   );
