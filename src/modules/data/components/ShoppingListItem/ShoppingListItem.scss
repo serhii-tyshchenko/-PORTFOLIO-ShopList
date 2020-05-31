@@ -5,15 +5,11 @@
     align-items: baseline;
     justify-content: space-between;
     margin-bottom: 15px;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 5px;
     @include themify($themes) {
         color: themed('color-primary');
-        background-color: themed('background-primary');
-    }
-    &:hover {
-        @include themify($themes) {
-            background-color: themed('background-secondary');
-        }
+        background-color: themed('background-secondary');
     }
     &-cb {
         margin-right: 10px;

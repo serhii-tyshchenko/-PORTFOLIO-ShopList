@@ -19,12 +19,14 @@ UIIconButton.defaultProps = {
   icon: '',
   extraClassName: '',
   onClick: null,
+  children: null,
 };
 
 UIIconButton.propTypes = {
   icon: PropTypes.string,
   onClick: PropTypes.func,
   extraClassName: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 export { UIIconButton };
