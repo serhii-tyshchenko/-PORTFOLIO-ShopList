@@ -1,0 +1,12 @@
+.todo-list {
+    &__form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        &-input {
+            flex-grow: 1;
+            margin-right: 5px;
+        }
+    }
+}

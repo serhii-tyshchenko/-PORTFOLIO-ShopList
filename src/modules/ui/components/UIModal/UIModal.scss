@@ -1,0 +1,55 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.ui-modal {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+    max-width: 480px;
+    min-height: 320px;
+    transform: translate(-50%);
+    @include themify($themes) {
+        color: themed('color-primary');
+        background: themed('background-secondary');
+    }
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+        @include themify($themes) {
+            border-bottom: 1px solid darken(themed('color-secondary'), 30%);
+        }
+    }
+    &__title {
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 20px;
+    }
+    &__btn-close {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: $break-480) {
+    .ui-modal {
+        min-width: 300px;
+    }
+}

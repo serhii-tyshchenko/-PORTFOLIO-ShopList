@@ -1,0 +1,27 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+.header {
+    padding: 20px 0;
+    @include themify($themes) {
+        color: themed('color-primary');
+        background-color: themed('background-secondary');
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__logo {
+        @include themify($themes) {
+            color: themed('color-accent');
+        }
+        font: bold 2rem $font-secondary;
+        text-decoration: none;
+    }
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.2rem;
+        width: 8rem;
+    }
+}

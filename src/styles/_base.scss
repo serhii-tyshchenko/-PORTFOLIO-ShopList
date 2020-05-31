@@ -1,0 +1,72 @@
+@import '_variables';
+@import '_mixins';
+html {
+    font-size: 16px;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: 1rem $font-primary;
+}
+
+a {
+    @include themify($themes) {
+        color: themed('color-acccent');
+    }
+}
+button {
+    font-family: $font-primary;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+textarea {
+    padding: 0.5em;
+    font-family: $font-primary;
+    border: none;
+    border: 1px solid;
+    border-radius: 4px;
+    background: none;
+}
+ul,
+ol {
+    list-style-type: none;
+}
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.wrapper {
+    width: 100%;
+    max-width: 1900px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.display-none {
+    display: none;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    @include themify($themes) {
+        background: themed('background-secondary');
+    }
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    @include themify($themes) {
+        background: themed('color-secondary');
+    }
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @include themify($themes) {
+        background: themed('color-accent');
+    }
+}

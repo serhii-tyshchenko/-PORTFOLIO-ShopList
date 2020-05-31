@@ -1,0 +1,9 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+.footer {
+    padding: 20px 0;
+    @include themify($themes) {
+        color: themed('color-primary');
+        background-color: themed('background-secondary');
+    }
+}

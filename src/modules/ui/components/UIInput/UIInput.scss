@@ -1,0 +1,20 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.ui-input {
+    padding: 0.15em 0.3em;
+    padding: 0.5em;
+    font-family: $font-primary;
+    border-radius: 4px;
+    background: none;
+    &::placeholder {
+        @include themify($themes) {
+            color: darken(themed('color-secondary'), 20%);
+        }
+    }
+    @include themify($themes) {
+        color: themed('color-primary');
+        border: 1px solid darken(themed('color-secondary'), 20%);
+        background-color: inherit;
+    }
+}

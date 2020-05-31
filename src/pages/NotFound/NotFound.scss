@@ -1,0 +1,12 @@
+.not-found {
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        flex-direction: column;
+    }
+    &__message {
+        margin-bottom: 20px;
+    }
+}

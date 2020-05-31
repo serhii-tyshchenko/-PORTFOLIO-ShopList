@@ -1,0 +1,13 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+.main {
+    display: flex;
+    flex-grow: 1;
+    @include themify($themes) {
+        color: themed('color-primary');
+        background: themed('background-primary');
+    }
+    &__content {
+        padding: 20px 15px;
+    }
+}

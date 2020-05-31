@@ -1,0 +1,17 @@
+.todo-list__item {
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    &-cb {
+        margin-right: 10px;
+    }
+    &-title {
+        flex-grow: 1;
+    }
+    &-cb:checked + &-title {
+        text-decoration: line-through;
+    }
+}

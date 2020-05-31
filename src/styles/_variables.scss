@@ -1,0 +1,35 @@
+$color1: rgb(255, 255, 255);
+$color2: rgb(240, 242, 245);
+$color3: rgb(45, 136, 255);
+$color4: rgb(5, 5, 5);
+$color5: rgb(36, 37, 38);
+$color6: rgb(176, 179, 184);
+
+$themes: (
+    light: (
+        color-primary: $color4,
+        color-secondary: $color6,
+        color-accent: $color3,
+        background-primary: $color2,
+        background-secondary: $color1
+    ),
+    dark: (
+        color-primary: $color1,
+        color-secondary: $color6,
+        color-accent: $color3,
+        background-primary: $color4,
+        background-secondary: $color5
+    )
+);
+
+$font-icon: 'fontello';
+$font-primary: 'Roboto';
+$font-secondary: 'Arial Narrow';
+
+// screen sizes
+$break-320: 320px;
+$break-480: 480px;
+$break-640: 640px;
+$break-768: 768px;
+$break-960: 960px;
+$break-1140: 1140px;
