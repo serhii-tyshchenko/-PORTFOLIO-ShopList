@@ -1,14 +1,17 @@
 .shopping-list {
-    &__form {
-        max-width: 640px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-        &-input {
-            flex-grow: 1;
-            margin-right: 10px;
-        }
+  &__form {
+    max-width: 640px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    &-input {
+      flex-grow: 1;
+      margin-right: 10px;
     }
+    &-btn {
+      font-size: 2rem;
+    }
+  }
 }

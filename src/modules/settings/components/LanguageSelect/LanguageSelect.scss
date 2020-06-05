@@ -1,12 +1,12 @@
 @import '~styles/variables';
 @import '~styles/mixins';
 .language-selector {
-    font-weight: bold;
-    cursor: pointer;
-    appearance: none;
-    & option {
-        @include themify($themes) {
-            background: themed('background-secondary');
-        }
+  font-weight: bold;
+  cursor: pointer;
+  appearance: none;
+  & option {
+    @include themify($themes) {
+      background: themed('background-secondary');
     }
+  }
 }
