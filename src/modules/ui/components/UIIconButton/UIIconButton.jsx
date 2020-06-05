@@ -1,15 +1,16 @@
+/* eslint-disable react/button-has-type */
 import React from 'react';
 import PropTypes from 'prop-types';
 import './UIIconButton.scss';
 
 const UIIconButton = (props) => {
   const {
-    icon, children, onClick, extraClassName, title,
+    icon, children, onClick, extraClassName, title, type,
   } = props;
   const buttonClassName = `ui-icon-button icon-${icon} ${extraClassName}`;
 
   return (
-    <button type="button" className={buttonClassName} onClick={onClick} title={title}>
+    <button type={type} className={buttonClassName} onClick={onClick} title={title}>
       {children}
     </button>
   );
@@ -21,6 +22,7 @@ UIIconButton.defaultProps = {
   title: '',
   onClick: null,
   children: null,
+  type: 'submit',
 };
 
 UIIconButton.propTypes = {
@@ -28,6 +30,7 @@ UIIconButton.propTypes = {
   onClick: PropTypes.func,
   extraClassName: PropTypes.string,
   title: PropTypes.string,
+  type: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 

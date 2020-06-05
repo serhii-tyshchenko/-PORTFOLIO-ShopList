@@ -7,7 +7,7 @@ const Header = () => (
   <header className="header">
     <div className="header__content wrapper">
       <a href="/" className="header__logo">
-        ShopMe
+        <span className="header__title">ShopList</span>
       </a>
       <div className="header__menu">
         <LanguageSelector />
