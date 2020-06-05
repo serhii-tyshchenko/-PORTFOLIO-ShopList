@@ -1,7 +1,12 @@
-# ShopLi
+# ShopLy
 
 ## Features
 
+- Dark/light theme
+- Suggestions list
+- Cloud syncronization
+
+## Tech stack
 -   Hooks
 -   Redux
 -   Router
