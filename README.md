@@ -1,4 +1,4 @@
-# ShopLy
+# ShopList
 
 ## Features
 
