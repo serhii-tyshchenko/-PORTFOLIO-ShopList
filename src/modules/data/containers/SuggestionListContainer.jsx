@@ -2,6 +2,7 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import { addItem, removeSuggestion, updateSuggestion } from 'store/actions';
+import { sortByABC } from 'assets/utils';
 import { SuggestionList } from '../components';
 
 const SuggestionListContainer = () => {
@@ -9,17 +10,7 @@ const SuggestionListContainer = () => {
   const userId = useSelector((state) => state.user.uid);
   const data = useSelector((state) => state.suggestions
     .filter((item) => item.inList !== true)
-    .sort((a, b) => {
-      const nameA = a.title.toUpperCase();
-      const nameB = b.title.toUpperCase();
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
-      return 0;
-    }));
+    .sort((a, b) => sortByABC(a.title, b.title)));
 
   function handleAddClick(evt) {
     const title = evt.target.nextSibling.value;
