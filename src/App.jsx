@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { getItems, getSuggestions, getSettings } from 'store/actions';
 import { AuthContainer } from 'modules/user';
-import { Home, NotFound } from './pages';
+import { Home } from './pages';
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -19,16 +18,10 @@ function App() {
     }
   }, [uid]);
   return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route path="/" exact strict component={Home} />
-          <Route path="/ShoppingList" exact strict component={Home} />
-          <Route path="*" exact strict component={NotFound} />
-        </Switch>
-        <AuthContainer />
-      </div>
-    </Router>
+    <div className="App">
+      <Home />
+      <AuthContainer />
+    </div>
   );
 }
 
