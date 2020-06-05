@@ -2,7 +2,11 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  removeItem, updateItem, addItem, addSuggestion, updateSuggestion,
+  removeItem,
+  updateItem,
+  addItem,
+  addSuggestion,
+  updateSuggestion,
 } from 'store/actions';
 import { getStrings } from 'assets/localization';
 import { ShoppingList } from '../components';
@@ -26,7 +30,13 @@ const ShoppingListContainer = () => {
       };
       dispatch(addItem(userId, newItem));
       if (!itemAlreadyExist(suggestions, title)) {
-        dispatch(addSuggestion(userId, { id: newItem.id, title, inList: true }));
+        dispatch(
+          addSuggestion(userId, {
+            id: newItem.id,
+            title,
+            inList: true,
+          }),
+        );
       }
     }
   }
