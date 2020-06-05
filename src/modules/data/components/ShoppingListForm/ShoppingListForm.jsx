@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { UIButton, UIInput } from 'modules/ui';
+import { UIIconButton, UIInput } from 'modules/ui';
 import './ShoppingListForm.scss';
 
 const ShoppingListForm = (props) => {
-  const { onSubmit, STR } = props;
+  const { onSubmit } = props;
   const [itemTitle, setItemTitle] = useState('');
   function handleItemChange(evt) {
     setItemTitle(evt.target.value);
@@ -23,7 +23,7 @@ const ShoppingListForm = (props) => {
         onChange={handleItemChange}
         required
       />
-      <UIButton type="submit" btnType="primary" text={STR.ADD_ITEM} onClick={handleSubmit} />
+      <UIIconButton type="submit" extraClassName="shopping-list__form-btn" icon="plus" onClick={handleSubmit} />
     </form>
   );
 };
