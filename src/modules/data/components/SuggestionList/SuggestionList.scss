@@ -1,0 +1,8 @@
+.suggestion-list {
+    margin: 0 auto;
+    &__list {
+        max-height: 70vh;
+        overflow-y: auto;
+        padding-right: 10px;
+    }
+}

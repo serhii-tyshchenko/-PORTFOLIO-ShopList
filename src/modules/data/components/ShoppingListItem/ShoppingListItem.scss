@@ -1,0 +1,31 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+.shopping-list__item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    @include themify($themes) {
+        color: themed('color-primary');
+        background-color: themed('background-secondary');
+    }
+    &-cb {
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    &-cb:checked + &-title {
+        text-decoration: line-through;
+    }
+    &-title {
+        flex-grow: 1;
+        margin-right: 10px;
+        padding: 0.25em 0;
+        color: inherit;
+        text-overflow: ellipsis;
+        border: 0;
+        background: inherit;
+        overflow: hidden;
+    }
+}

@@ -7,9 +7,12 @@ const persistedState = LS.loadState();
 const composeTools = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, persistedState, composeTools(applyMiddleware(thunk)));
 store.subscribe(() => {
-  const { data, user, settings } = store.getState();
+  const {
+    data, suggestions, user, settings,
+  } = store.getState();
   LS.saveState({
     data,
+    suggestions,
     user,
     settings,
   });

@@ -12,16 +12,21 @@
         justify-content: space-between;
     }
     &__logo {
+        padding-left: 40px;
+        font: bold 2rem $font-secondary;
+        text-decoration: none;
+        background-image: url('~logo.svg');
+        background-repeat: no-repeat;
+        background-position: left 48%;
+        background-size: 32px;
         @include themify($themes) {
             color: themed('color-accent');
         }
-        font: bold 2rem $font-secondary;
-        text-decoration: none;
     }
     &__menu {
         display: flex;
         justify-content: space-between;
-        font-size: 1.2rem;
-        width: 8rem;
+        width: 180px;
+        font-size: 1.5rem;
     }
 }

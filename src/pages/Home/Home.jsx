@@ -1,11 +1,14 @@
 import React from 'react';
-import { ToDoListContainer } from 'modules/todos';
+import { ShoppingListContainer, SuggestionListContainer } from 'modules/data';
 import { BaseLayout } from '../_Layout';
+import './Home.scss';
 
 const Home = () => (
   <BaseLayout>
-    <h1>ToDo List</h1>
-    <ToDoListContainer />
+    <div className="list-wrapper">
+      <ShoppingListContainer />
+      <SuggestionListContainer />
+    </div>
   </BaseLayout>
 );
 

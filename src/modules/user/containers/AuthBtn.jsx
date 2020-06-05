@@ -9,7 +9,8 @@ const AuthBtn = () => {
   const isLogged = useSelector((state) => state.user.isLogged);
   const { language } = useSelector((state) => state.settings);
   const STR = getStrings(language);
-  const loggedStatus = isLogged ? STR.SIGN_OUT : STR.SIGN_IN;
+  const btnIcon = isLogged ? 'user' : 'user-o';
+  const btnTitle = isLogged ? STR.SIGN_OUT : STR.SIGN_IN;
   function handleLogInClick() {
     if (isLogged) {
       dispatch(signOut());
@@ -18,9 +19,12 @@ const AuthBtn = () => {
     }
   }
   return (
-    <UIIconButton extraClassName="login__btn" icon="user" onClick={handleLogInClick}>
-      {loggedStatus}
-    </UIIconButton>
+    <UIIconButton
+      extraClassName="login__btn"
+      icon={btnIcon}
+      title={btnTitle}
+      onClick={handleLogInClick}
+    />
   );
 };
 
