@@ -11,6 +11,7 @@ const data = {
       YOUR_EMAIL: 'Your email',
       YOUR_PASSWORD: 'Your password',
       CREATE_AN_ACCOUNT: 'Create an Account',
+      SUGGESTION_LIST: 'Suggestion List',
     },
   },
   ua: {
@@ -25,6 +26,7 @@ const data = {
       YOUR_EMAIL: 'Ваш email',
       YOUR_PASSWORD: 'Ваш пароль',
       CREATE_AN_ACCOUNT: 'Створити обліковий запис',
+      SUGGESTION_LIST: 'Suggestion List',
     },
   },
   ru: {
@@ -39,6 +41,7 @@ const data = {
       YOUR_EMAIL: 'Ваш email',
       YOUR_PASSWORD: 'Ваш пароль',
       CREATE_AN_ACCOUNT: 'Создать учетную запись',
+      SUGGESTION_LIST: 'Suggestion List',
     },
   },
 };

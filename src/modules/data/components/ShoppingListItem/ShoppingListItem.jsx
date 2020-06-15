@@ -24,6 +24,7 @@ const ShoppingListItem = (props) => {
         defaultValue={title}
         onBlur={onBlur}
         maxLength="50"
+        disabled
       />
       <UIIconButton id={id} icon="cancel" onClick={onRemoveClick} />
     </li>
