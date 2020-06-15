@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -9,29 +9,32 @@ import {
   updateSuggestion,
 } from 'store/actions';
 import { getStrings } from 'assets/localization';
+import { UIModal } from 'modules/ui';
+import { SuggestionListContainer } from 'modules/data';
 import { ShoppingList } from '../components';
 
-const itemAlreadyExist = (arr, value) => arr.some((el) => el.title.toUpperCase() === value.toUpperCase());
+const isItemExists = (arr, value) => arr.some((item) => item.title.toUpperCase() === value.toUpperCase());
 
 const ShoppingListContainer = () => {
   const dispatch = useDispatch();
-  const userId = useSelector((state) => state.user.uid);
-  const data = useSelector((state) => state.data);
-  const suggestions = useSelector((state) => state.suggestions);
-  const { language } = useSelector((state) => state.settings);
+  // const uid = useSelector((state) => state.user.uid);
+  const {
+    data, suggestions, settings: { language }, user: { uid },
+  } = useSelector((state) => state);
   const STR = getStrings(language);
+  const [isModalVisible, setModalVisible] = useState(false);
 
   function handleAddClick(title) {
-    if (!itemAlreadyExist(data, title)) {
+    if (!isItemExists(data, title)) {
       const newItem = {
         id: uuidv4(),
         title,
         isCompleted: false,
       };
-      dispatch(addItem(userId, newItem));
-      if (!itemAlreadyExist(suggestions, title)) {
+      dispatch(addItem(uid, newItem));
+      if (!isItemExists(suggestions, title)) {
         dispatch(
-          addSuggestion(userId, {
+          addSuggestion(uid, {
             id: newItem.id,
             title,
             inList: true,
@@ -43,19 +46,25 @@ const ShoppingListContainer = () => {
   function handleCompleteClick(evt) {
     const { id } = evt.target.closest('li');
     const isCompleted = evt.target.checked;
-    dispatch(updateItem(userId, { id, isCompleted }));
+    dispatch(updateItem(uid, { id, isCompleted }));
   }
   function handleBlur(evt) {
     const { id } = evt.target.closest('li');
     const title = evt.target.value;
-    dispatch(updateItem(userId, { id, title }));
+    dispatch(updateItem(uid, { id, title }));
   }
   function handleRemoveClick(evt) {
     const { id } = evt.target.closest('li');
     const title = evt.target.previousSibling.value;
-    dispatch(removeItem(userId, id));
+    dispatch(removeItem(uid, id));
     const sugItem = suggestions.find((item) => item.title === title);
-    dispatch(updateSuggestion(userId, { id: sugItem.id, inList: false }));
+    dispatch(updateSuggestion(uid, { id: sugItem.id, inList: false }));
+  }
+  function handleFavClick() {
+    setModalVisible(true);
+  }
+  function handleModalClose() {
+    setModalVisible(false);
   }
 
   return (
@@ -65,9 +74,13 @@ const ShoppingListContainer = () => {
         onCompleteClick={handleCompleteClick}
         onRemoveClick={handleRemoveClick}
         onAddClick={handleAddClick}
+        onFavClick={handleFavClick}
         onBlur={handleBlur}
         STR={STR}
       />
+      <UIModal isVisible={isModalVisible} onClose={handleModalClose} title={STR.SUGGESTION_LIST}>
+        <SuggestionListContainer />
+      </UIModal>
     </>
   );
 };
