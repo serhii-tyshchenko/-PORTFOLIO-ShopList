@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { UIInput, UIIconButton } from 'modules/ui';
 import './ShoppingListForm.scss';
 
@@ -30,6 +31,11 @@ const ShoppingListForm = (props) => {
       <UIIconButton icon="star" type="button" extraClassName="shopping-list__form-btn" onClick={handleFavClick} />
     </form>
   );
+};
+
+ShoppingListForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  onFavClick: PropTypes.func.isRequired,
 };
 
 export { ShoppingListForm };
