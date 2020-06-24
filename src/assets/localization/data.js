@@ -12,6 +12,7 @@ const data = {
       CREATE_AN_ACCOUNT: 'Create an Account',
       CONNECT_WITH: 'or connect with',
       SUGGESTION_LIST: 'Suggestion List',
+      TOGGLE_THEME: 'Change theme',
     },
   },
   ua: {
@@ -27,6 +28,7 @@ const data = {
       CREATE_AN_ACCOUNT: 'Створити обліковий запис',
       CONNECT_WITH: 'або увійти за допомогою',
       SUGGESTION_LIST: 'Список пропозицій',
+      TOGGLE_THEME: 'Змінити тему',
     },
   },
   ru: {
@@ -42,6 +44,7 @@ const data = {
       CREATE_AN_ACCOUNT: 'Создать учетную запись',
       CONNECT_WITH: 'или войти с помощью',
       SUGGESTION_LIST: 'Список предложений',
+      TOGGLE_THEME: 'Изменить тему',
     },
   },
 };

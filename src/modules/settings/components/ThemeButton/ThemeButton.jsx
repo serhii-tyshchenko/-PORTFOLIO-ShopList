@@ -4,9 +4,9 @@ import { UIIconButton } from 'modules/ui';
 import './ThemeButton.scss';
 
 const ThemeButton = (props) => {
-  const { theme, onClick } = props;
+  const { theme, onClick, STR } = props;
   const btnIcon = theme === 'light' ? 'sun' : 'moon';
-  return <UIIconButton icon={btnIcon} onClick={onClick} />;
+  return <UIIconButton icon={btnIcon} onClick={onClick} title={STR.TOGGLE_THEME} />;
 };
 
 export { ThemeButton };
