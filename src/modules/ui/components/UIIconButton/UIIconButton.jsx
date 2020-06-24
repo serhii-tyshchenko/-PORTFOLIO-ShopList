@@ -7,7 +7,7 @@ const UIIconButton = (props) => {
   const {
     icon, children, onClick, extraClassName, title, type,
   } = props;
-  const buttonClassName = `ui-icon-button icon-${icon} ${extraClassName}`;
+  const buttonClassName = extraClassName ? `ui-icon-button icon-${icon} ${extraClassName}` : `ui-icon-button icon-${icon}`;
 
   return (
     <button type={type} className={buttonClassName} onClick={onClick} title={title}>
@@ -22,7 +22,7 @@ UIIconButton.defaultProps = {
   title: '',
   onClick: null,
   children: null,
-  type: 'submit',
+  type: 'button',
 };
 
 UIIconButton.propTypes = {
