@@ -1,41 +1,33 @@
 @import '~styles/variables';
-@import '~styles/mixins';
+
 .ui-button {
-    padding: 0.375em 0.75em;
-    font-size: 1rem;
-    line-height: 1.5;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    &--small {
-        font-size: 0.75rem;
+  padding: 0.375em 0.75em;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  &--small {
+    font-size: 0.75rem;
+  }
+  &--large {
+    font-size: 1.25rem;
+  }
+  &--primary {
+    color: white;
+    background: var(--color-accent);
+    &:hover {
+      filter: brightness(110%);
     }
-    &--large {
-        font-size: 1.25rem;
+  }
+  &--secondary {
+    color: var(--color-secondary);
+    background: transparent;
+    border-color: var(--color-secondary);
+    &:hover {
+      color: white;
+      filter: brightness(110%);
     }
-    &--primary {
-        @include themify($themes) {
-            color: white;
-            background: themed('color-accent');
-        }
-        &:hover {
-            @include themify($themes) {
-                background: darken(themed('color-accent'), 10%);
-            }
-        }
-    }
-    &--secondary {
-        @include themify($themes) {
-            color: themed('color-secondary');
-            background: transparent;
-            border-color: themed('color-secondary');
-        }
-        &:hover {
-            @include themify($themes) {
-                color: white;
-                background: darken(themed('color-secondary'), 10%);
-            }
-        }
-    }
+  }
 }

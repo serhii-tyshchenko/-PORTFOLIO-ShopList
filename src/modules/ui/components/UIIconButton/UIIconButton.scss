@@ -1,103 +1,101 @@
 @import '~styles/_variables';
-@import '~styles/mixins';
+
 .ui-icon-button {
-    display: flex;
-    align-items: center;
-    font-size: inherit;
-    @include themify($themes) {
-        color: themed('color-primary');
-    }
+  display: flex;
+  align-items: center;
+  font-size: inherit;
+  color: var(--color-primary);
 }
 [class^='icon-']:before,
 [class*=' icon-']:before {
-    display: inline-block;
-    width: 1em;
-    margin: 0 0.2em;
-    font-weight: normal;
-    font-family: $font-icon;
-    font-style: normal;
-    font-variant: normal;
-    line-height: 1em;
-    text-align: center;
-    text-transform: none;
-    text-decoration: inherit;
+  display: inline-block;
+  width: 1em;
+  margin: 0 0.2em;
+  font-weight: normal;
+  font-family: $font-icon;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1em;
+  text-align: center;
+  text-transform: none;
+  text-decoration: inherit;
 }
 
 .icon-user:before {
-    content: '\e800';
+  content: '\e800';
 }
 .icon-user-o:before {
-    content: '\f2c0';
+  content: '\f2c0';
 }
 .icon-pin-outline:before {
-    content: '\e801';
+  content: '\e801';
 }
 .icon-pin:before {
-    content: '\e802';
+  content: '\e802';
 }
 .icon-trash:before {
-    content: '\e803';
+  content: '\e803';
 }
 .icon-adjust:before {
-    content: '\e804';
+  content: '\e804';
 }
 .icon-calendar:before {
-    content: '\e805';
+  content: '\e805';
 }
 .icon-plus:before {
-    content: '\e806';
+  content: '\e806';
 }
 .icon-cancel:before {
-    content: '\e807';
+  content: '\e807';
 }
 .icon-star:before {
-    content: '\e808';
+  content: '\e808';
 }
 .icon-star-empty:before {
-    content: '\e809';
+  content: '\e809';
 }
 .icon-pencil:before {
-    content: '\e80a';
+  content: '\e80a';
 }
 .icon-bell:before {
-    content: '\e80b';
+  content: '\e80b';
 }
 .icon-left-open:before {
-    content: '\e80c';
+  content: '\e80c';
 }
 .icon-right-open:before {
-    content: '\e80d';
+  content: '\e80d';
 }
 .icon-resize-full:before {
-    content: '\e80e';
+  content: '\e80e';
 }
 .icon-left-big:before {
-    content: '\e80f';
+  content: '\e80f';
 }
 .icon-right-big:before {
-    content: '\e810';
+  content: '\e810';
 }
 .icon-color-adjust:before {
-    content: '\f020';
+  content: '\f020';
 }
 .icon-filter:before {
-    content: '\f0b0';
+  content: '\f0b0';
 }
 .icon-bell-alt:before {
-    content: '\f0f3';
+  content: '\f0f3';
 }
 .icon-sun:before {
-    content: '\f185';
+  content: '\f185';
 }
 .icon-moon:before {
-    content: '\f186';
+  content: '\f186';
 }
 .icon-google:before {
-    content: '\f1a0';
+  content: '\f1a0';
 }
 .icon-bell-off:before {
-    content: '\f1f6';
+  content: '\f1f6';
 }
 .icon-bell-off-empty:before {
-    content: '\f1f7';
+  content: '\f1f7';
 }

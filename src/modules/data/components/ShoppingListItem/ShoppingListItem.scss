@@ -1,5 +1,4 @@
 @import '~styles/variables';
-@import '~styles/mixins';
 .shopping-list__item {
   display: flex;
   align-items: baseline;
@@ -10,19 +9,15 @@
   &:last-child {
     margin-bottom: 0;
   }
-  @include themify($themes) {
-    color: themed('color-primary');
-    background-color: themed('background-secondary');
-  }
+  color: var(--color-primary);
+  background-color: var(--background-secondary);
   &-cb {
     margin-right: 10px;
     cursor: pointer;
   }
   &-cb:checked + &-title {
     text-decoration: line-through;
-    @include themify($themes) {
-      color: themed('color-secondary');
-    }
+    color: var(--color-secondary);
   }
   &-title {
     flex-grow: 1;
