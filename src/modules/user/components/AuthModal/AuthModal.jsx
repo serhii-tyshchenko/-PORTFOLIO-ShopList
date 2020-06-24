@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { UITabs, UIModal } from 'modules/ui';
-import { getStrings } from 'assets/localization';
+import { getLocalization } from 'assets/localization';
 import { SignInForm } from './SignInForm';
 import { SignUpForm } from './SignUpForm';
 import { SocialLogInForm } from './SocialLogInForm';
@@ -20,7 +20,7 @@ const AuthModal = (props) => {
     onSignInWithGoogle,
   } = props;
   const { language } = useSelector((state) => state.settings);
-  const STR = getStrings(language);
+  const STR = getLocalization(language);
 
   return (
     <UIModal isVisible={isVisible} onClose={onClose} title={STR.AUTHENIFICATION}>

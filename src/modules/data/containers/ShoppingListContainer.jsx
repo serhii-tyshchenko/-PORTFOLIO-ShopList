@@ -8,7 +8,7 @@ import {
   addSuggestion,
   updateSuggestion,
 } from 'store/actions';
-import { getStrings } from 'assets/localization';
+import { getLocalization } from 'assets/localization';
 import { UIModal } from 'modules/ui';
 import { SuggestionListContainer } from 'modules/data';
 import { ShoppingList } from '../components';
@@ -21,7 +21,7 @@ const ShoppingListContainer = () => {
   const {
     data, suggestions, settings: { language }, user: { uid },
   } = useSelector((state) => state);
-  const STR = getStrings(language);
+  const STR = getLocalization(language);
   const [isModalVisible, setModalVisible] = useState(false);
 
   function handleAddClick(title) {

@@ -4,6 +4,7 @@
   font-weight: bold;
   cursor: pointer;
   appearance: none;
+  text-transform: uppercase;
   & option {
     background: var(--background-secondary);
   }
