@@ -6,6 +6,8 @@
   line-height: 1.5;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  background: inherit;
+  cursor: pointer;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   &--small {
@@ -23,8 +25,8 @@
   }
   &--secondary {
     color: var(--color-secondary);
-    background: transparent;
     border-color: var(--color-secondary);
+    background: transparent;
     &:hover {
       color: white;
       filter: brightness(110%);
