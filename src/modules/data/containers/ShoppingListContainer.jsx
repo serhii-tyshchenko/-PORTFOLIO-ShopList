@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { Localization } from 'contexts';
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -8,7 +9,6 @@ import {
   addSuggestion,
   updateSuggestion,
 } from 'store/actions';
-import { getLocalization } from 'assets/localization';
 import { UIModal } from 'modules/ui';
 import { SuggestionListContainer } from 'modules/data';
 import { ShoppingList } from '../components';
@@ -19,9 +19,9 @@ const ShoppingListContainer = () => {
   const dispatch = useDispatch();
   // const uid = useSelector((state) => state.user.uid);
   const {
-    data, suggestions, settings: { language }, user: { uid },
+    data, suggestions, user: { uid },
   } = useSelector((state) => state);
-  const STR = getLocalization(language);
+  const STR = useContext(Localization);
   const [isModalVisible, setModalVisible] = useState(false);
 
   function handleAddClick(title) {

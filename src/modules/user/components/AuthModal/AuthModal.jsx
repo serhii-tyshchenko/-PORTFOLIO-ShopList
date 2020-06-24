@@ -1,8 +1,7 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useContext } from 'react';
+import { Localization } from 'contexts';
 import PropTypes from 'prop-types';
 import { UITabs, UIModal } from 'modules/ui';
-import { getLocalization } from 'assets/localization';
 import { SignInForm } from './SignInForm';
 import { SignUpForm } from './SignUpForm';
 import { SocialLogInForm } from './SocialLogInForm';
@@ -19,8 +18,7 @@ const AuthModal = (props) => {
     onSignUp,
     onSignInWithGoogle,
   } = props;
-  const { language } = useSelector((state) => state.settings);
-  const STR = getLocalization(language);
+  const STR = useContext(Localization);
 
   return (
     <UIModal isVisible={isVisible} onClose={onClose} title={STR.AUTHENIFICATION}>

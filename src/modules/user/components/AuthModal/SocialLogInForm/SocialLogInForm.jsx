@@ -4,12 +4,12 @@ import './SocialLogInForm.scss';
 import { UIIconButton } from 'modules/ui';
 
 const SocialLogInForm = (props) => {
-  const { onSignInWithGoogle } = props;
+  const { onSignInWithGoogle, STR } = props;
 
   return (
     <>
       <div className="social-login">
-        <div className="social-login__label">or connect with</div>
+        <div className="social-login__label">{STR.CONNECT_WITH}</div>
         <div className="social-login__btns">
           <UIIconButton
             icon="google"

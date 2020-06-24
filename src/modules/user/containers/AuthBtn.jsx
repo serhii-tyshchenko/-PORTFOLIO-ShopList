@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Localization } from 'contexts';
 import { useDispatch, useSelector } from 'react-redux';
-import { UIIconButton } from 'modules/ui';
 import { showModal, signOut } from 'store/actions';
-import { getLocalization } from 'assets/localization';
+import { UIIconButton } from 'modules/ui';
 
 const AuthBtn = () => {
+  const STR = useContext(Localization);
   const dispatch = useDispatch();
   const isLogged = useSelector((state) => state.user.isLogged);
-  const { language } = useSelector((state) => state.settings);
-  const STR = getLocalization(language);
   const btnIcon = isLogged ? 'user' : 'user-o';
   const btnTitle = isLogged ? STR.SIGN_OUT : STR.SIGN_IN;
   function handleLogInClick() {
