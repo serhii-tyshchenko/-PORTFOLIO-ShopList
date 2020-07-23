@@ -18,7 +18,6 @@ const isItemExists = (arr, value) => arr.some((item) => item.title.toUpperCase()
 
 const ShoppingListContainer = () => {
   const dispatch = useDispatch();
-  // const uid = useSelector((state) => state.user.uid);
   const {
     data, suggestions, user: { uid }, modals: { sugg },
   } = useSelector((state) => state);
@@ -74,7 +73,7 @@ const ShoppingListContainer = () => {
         onBlur={handleBlur}
         STR={STR}
       />
-      <UIModal isVisible={sugg.isVisible} onClose={handleModalClose} title={STR.FAVOURITES_LIST}>
+      <UIModal isVisible={sugg.isVisible} onClose={handleModalClose} title={STR.FAVORITES_LIST}>
         <SuggestionListContainer />
       </UIModal>
     </>
