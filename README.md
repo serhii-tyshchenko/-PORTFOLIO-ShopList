@@ -1,7 +1,12 @@
-# My Shopping List
+# ShopList
 
 ## Features
 
+- Dark/light theme
+- Suggestions list
+- Cloud syncronization
+
+## Tech stack
 -   Hooks
 -   Redux
 -   Router
