@@ -19,14 +19,15 @@ const ShoppingListForm = (props) => {
   }
 
   return (
-    <form className="shopping-list__form" onSubmit={handleSubmit}>
+    <form className="shopping-list-form" onSubmit={handleSubmit}>
       <UIInput
-        extraClassName="shopping-list__form-input"
+        extraClassName="shopping-list-form__input"
         value={itemTitle}
         onChange={handleItemChange}
+        placeholder="Add new item"
         required
       />
-      <UIIconButton icon="plus" type="submit" extraClassName="shopping-list__form-btn" onClick={handleSubmit} />
+      <UIIconButton icon="plus" type="submit" extraClassName="shopping-list-form__btn" onClick={handleSubmit} />
     </form>
   );
 };
