@@ -5,8 +5,7 @@ import './SuggestionList.scss';
 const SuggestionList = ({
   data, onRemoveClick, onAddClick, onBlur,
 }) => (
-  <div className="suggestion-list">
-    <ul className="suggestion-list__list">
+    <ul className="suggestion-list">
       {data.map((item) => (
         <SuggestionListItem
           key={item.id}
@@ -17,7 +16,6 @@ const SuggestionList = ({
         />
       ))}
     </ul>
-  </div>
-);
+  );
 
 export { SuggestionList };
