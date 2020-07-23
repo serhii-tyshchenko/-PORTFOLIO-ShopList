@@ -1,0 +1,12 @@
+@import '~styles/variables';
+
+.footer {
+  padding: 20px 0;
+  color: var(--color-primary);
+  background-color: var(--background-secondary);
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
