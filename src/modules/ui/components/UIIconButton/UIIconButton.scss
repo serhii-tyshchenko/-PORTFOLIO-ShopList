@@ -1,15 +1,14 @@
 @import '~styles/_variables';
-@import '~styles/mixins';
+
 .ui-icon-button {
-    display: flex;
-    align-items: center;
-    font-size: inherit;
-    @include themify($themes) {
-        color: themed('color-primary');
-    }
-}
-[class^='icon-']:before,
-[class*=' icon-']:before {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+  font-size: inherit;
+  border: none;
+  background: inherit;
+  cursor: pointer;
+  &::before {
     display: inline-block;
     width: 1em;
     margin: 0 0.2em;
@@ -21,83 +20,86 @@
     text-align: center;
     text-transform: none;
     text-decoration: inherit;
-}
-
-.icon-user:before {
+  }
+  &--user::before {
     content: '\e800';
-}
-.icon-user-o:before {
+  }
+  &--user-o::before {
     content: '\f2c0';
-}
-.icon-pin-outline:before {
+  }
+  &--pin-outline::before {
     content: '\e801';
-}
-.icon-pin:before {
+  }
+  &--pin::before {
     content: '\e802';
-}
-.icon-trash:before {
+  }
+  &--trash::before {
     content: '\e803';
-}
-.icon-adjust:before {
+  }
+  &--adjust::before {
     content: '\e804';
-}
-.icon-calendar:before {
+  }
+  &--calendar::before {
     content: '\e805';
-}
-.icon-plus:before {
+  }
+  &--plus::before {
     content: '\e806';
-}
-.icon-cancel:before {
+  }
+  &--cancel::before {
     content: '\e807';
-}
-.icon-star:before {
+  }
+  &--star::before {
     content: '\e808';
-}
-.icon-star-empty:before {
+  }
+  &--star-empty::before {
     content: '\e809';
-}
-.icon-pencil:before {
+  }
+  &--pencil::before {
     content: '\e80a';
-}
-.icon-bell:before {
+  }
+  &--bell::before {
     content: '\e80b';
-}
-.icon-left-open:before {
+  }
+  &--left-open::before {
     content: '\e80c';
-}
-.icon-right-open:before {
+  }
+  &--right-open::before {
     content: '\e80d';
-}
-.icon-resize-full:before {
+  }
+  &--resize-full::before {
     content: '\e80e';
-}
-.icon-left-big:before {
+  }
+  &--left-big::before {
     content: '\e80f';
-}
-.icon-right-big:before {
+  }
+  &--right-big::before {
     content: '\e810';
-}
-.icon-color-adjust:before {
+  }
+  &--color-adjust::before {
     content: '\f020';
-}
-.icon-filter:before {
+  }
+  &--filter::before {
     content: '\f0b0';
-}
-.icon-bell-alt:before {
+  }
+  &--bell-alt::before {
     content: '\f0f3';
-}
-.icon-sun:before {
+  }
+  &--sun::before {
     content: '\f185';
-}
-.icon-moon:before {
+  }
+  &--moon::before {
     content: '\f186';
-}
-.icon-google:before {
+  }
+  &--google::before {
     content: '\f1a0';
-}
-.icon-bell-off:before {
+  }
+  &--bell-off::before {
     content: '\f1f6';
-}
-.icon-bell-off-empty:before {
+  }
+  &--bell-off-empty::before {
     content: '\f1f7';
+  }
+  &--heart:before {
+    content: '\e811';
+  }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Main } from 'pages/_Layout';
+import { Header, Main, Footer } from 'pages/_Layout';
 
 const BaseLayout = ({ children }) => (
   <>

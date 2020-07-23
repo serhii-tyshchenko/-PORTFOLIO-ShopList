@@ -1,11 +1,8 @@
 @import '~styles/variables';
-@import '~styles/mixins';
 .header {
   padding: 20px 0;
-  @include themify($themes) {
-    color: themed('color-primary');
-    background-color: themed('background-secondary');
-  }
+  color: var(--color-primary);
+  background-color: var(--background-secondary);
   &__content {
     display: flex;
     align-items: center;
@@ -18,9 +15,7 @@
     background-repeat: no-repeat;
     background-position: left 48%;
     background-size: 32px;
-    @include themify($themes) {
-      color: themed('color-accent');
-    }
+    color: var(--color-accent);
   }
   &__title {
     font: bold 2rem $font-secondary;

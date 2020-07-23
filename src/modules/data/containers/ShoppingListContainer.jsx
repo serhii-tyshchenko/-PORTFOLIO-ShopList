@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { Localization } from 'contexts';
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -7,8 +8,8 @@ import {
   addItem,
   addSuggestion,
   updateSuggestion,
+  hideModal,
 } from 'store/actions';
-import { getStrings } from 'assets/localization';
 import { UIModal } from 'modules/ui';
 import { SuggestionListContainer } from 'modules/data';
 import { ShoppingList } from '../components';
@@ -17,12 +18,10 @@ const isItemExists = (arr, value) => arr.some((item) => item.title.toUpperCase()
 
 const ShoppingListContainer = () => {
   const dispatch = useDispatch();
-  // const uid = useSelector((state) => state.user.uid);
   const {
-    data, suggestions, settings: { language }, user: { uid },
+    data, suggestions, user: { uid }, modals: { sugg },
   } = useSelector((state) => state);
-  const STR = getStrings(language);
-  const [isModalVisible, setModalVisible] = useState(false);
+  const STR = useContext(Localization);
 
   function handleAddClick(title) {
     if (!isItemExists(data, title)) {
@@ -60,11 +59,8 @@ const ShoppingListContainer = () => {
     const sugItem = suggestions.find((item) => item.title === title);
     dispatch(updateSuggestion(uid, { id: sugItem.id, inList: false }));
   }
-  function handleFavClick() {
-    setModalVisible(true);
-  }
   function handleModalClose() {
-    setModalVisible(false);
+    dispatch(hideModal({ modalName: 'sugg', data: null }));
   }
 
   return (
@@ -74,11 +70,10 @@ const ShoppingListContainer = () => {
         onCompleteClick={handleCompleteClick}
         onRemoveClick={handleRemoveClick}
         onAddClick={handleAddClick}
-        onFavClick={handleFavClick}
         onBlur={handleBlur}
         STR={STR}
       />
-      <UIModal isVisible={isModalVisible} onClose={handleModalClose} title={STR.SUGGESTION_LIST}>
+      <UIModal isVisible={sugg.isVisible} onClose={handleModalClose} title={STR.FAVORITES_LIST}>
         <SuggestionListContainer />
       </UIModal>
     </>

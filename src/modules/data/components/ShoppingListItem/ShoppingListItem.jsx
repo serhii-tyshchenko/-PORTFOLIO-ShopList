@@ -3,6 +3,7 @@ import { UIIconButton } from 'modules/ui';
 import './ShoppingListItem.scss';
 
 const ShoppingListItem = (props) => {
+  // TODO Add props validation
   const {
     data: { id, title, isCompleted },
     onCompleteClick,
@@ -12,12 +13,14 @@ const ShoppingListItem = (props) => {
 
   return (
     <li id={id} className="shopping-list__item">
-      <input
-        type="checkbox"
-        className="shopping-list__item-cb"
-        checked={isCompleted}
-        onChange={onCompleteClick}
-      />
+      <label className="shopping-list__item-lb">
+        <input
+          type="checkbox"
+          className="shopping-list__item-cb"
+          checked={isCompleted}
+          onChange={onCompleteClick}
+        />
+      </label>
       <input
         type="text"
         className="shopping-list__item-title"
@@ -26,7 +29,7 @@ const ShoppingListItem = (props) => {
         maxLength="50"
         disabled
       />
-      <UIIconButton id={id} icon="cancel" onClick={onRemoveClick} />
+      <UIIconButton id={id} icon="cancel" onClick={onRemoveClick} extraClassName="shopping-list__item-btn" />
     </li>
   );
 };

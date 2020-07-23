@@ -11,21 +11,21 @@ const SuggestionListItem = (props) => {
   } = props;
 
   return (
-    <li id={id} className="suggestion-list__item">
+    <li id={id} className="suggestion-list-item">
       <UIIconButton
         id={id}
-        extraClassName="suggestion-list__item-add"
+        extraClassName="suggestion-list-item__btn-add"
         icon="plus"
         onClick={onAddClick}
       />
       <input
         type="text"
-        className="suggestion-list__item-title"
+        className="suggestion-list-item__title"
         defaultValue={title}
         onBlur={onBlur}
         maxLength="50"
       />
-      <UIIconButton id={id} icon="cancel" onClick={onRemoveClick} />
+      <UIIconButton id={id} icon="trash" onClick={onRemoveClick} />
     </li>
   );
 };

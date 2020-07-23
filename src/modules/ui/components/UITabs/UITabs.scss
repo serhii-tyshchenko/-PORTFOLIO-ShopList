@@ -1,35 +1,31 @@
 @import '~styles/variables';
-@import '~styles/mixins';
 
 .ui-tabs {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
+  color: inherit;
+  &__list {
+    display: flex;
+    margin-bottom: 25px;
+    list-style-type: none;
+    input {
+      border: none;
+    }
+  }
+  &__item {
+    padding: 5px;
+    color: var(--color-secondary);
+    &--active {
+      color: var(--color-accent);
+      border-bottom: 2px solid;
+      border-radius: 0;
+    }
+  }
+  &__btn {
+    padding: 0.25em 0.5em;
     color: inherit;
-    &__list {
-        display: flex;
-        margin-bottom: 25px;
-        input {
-            border: none;
-        }
+    background: inherit;
+    &:hover {
+      cursor: pointer;
     }
-    &__item {
-        padding: 5px;
-        @include themify($themes) {
-            color: themed('color-secondary');
-        }
-        &--active {
-            border-radius: 0;
-            @include themify($themes) {
-                color: themed('color-accent');
-                border-bottom: 2px solid;
-            }
-        }
-    }
-    &__btn {
-        color: inherit;
-        background: inherit;
-        padding: 0.25em 0.5em;
-        &:hover {
-            cursor: pointer;
-        }
-    }
+  }
 }

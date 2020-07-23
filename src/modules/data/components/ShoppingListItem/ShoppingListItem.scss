@@ -1,37 +1,40 @@
 @import '~styles/variables';
-@import '~styles/mixins';
 .shopping-list__item {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 15px;
-  padding: 10px;
+  margin-bottom: 1.25em;
+  color: var(--color-primary);
+  font-size: 1.2rem;
   border-radius: 5px;
+  background-color: var(--background-secondary);
   &:last-child {
     margin-bottom: 0;
   }
-  @include themify($themes) {
-    color: themed('color-primary');
-    background-color: themed('background-secondary');
+  // TODO Find solution for checkbox and remove btn width and height
+  &-lb {
+    padding: 1em;
+    margin-right: 10px;
   }
   &-cb {
-    margin-right: 10px;
     cursor: pointer;
   }
   &-cb:checked + &-title {
+    color: var(--color-secondary);
     text-decoration: line-through;
-    @include themify($themes) {
-      color: themed('color-secondary');
-    }
   }
   &-title {
     flex-grow: 1;
-    margin-right: 10px;
-    padding: 0.25em 0;
     color: inherit;
+    font-size: inherit;
     text-overflow: ellipsis;
     border: 0;
     background: inherit;
     overflow: hidden;
+    margin-right: 10px;
+    width: 100%;
+  }
+  &-btn {
+    padding: 1em;
   }
 }

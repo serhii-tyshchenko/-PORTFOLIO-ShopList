@@ -4,11 +4,12 @@ import './UIInput.scss';
 
 const UIInput = (props) => {
   const {
-    type, value, onChange, extraClassName, ...rest
+    type, value, onChange, extraClassName, placeholder, ...rest
   } = props;
   const className = extraClassName ? `ui-input ${extraClassName}` : 'ui-input';
 
-  return <input type={type} onChange={onChange} value={value} className={className} {...rest} />;
+  // eslint-disable-next-line max-len
+  return <input type={type} value={value} className={className} onChange={onChange} placeholder={placeholder} {...rest} />;
 };
 
 UIInput.defaultProps = {
@@ -16,12 +17,14 @@ UIInput.defaultProps = {
   onChange: null,
   value: '',
   type: 'text',
+  placeholder: '',
 };
 
 UIInput.propTypes = {
   extraClassName: PropTypes.string,
   onChange: PropTypes.func,
   value: PropTypes.string,
+  placeholder: PropTypes.string,
   type: PropTypes.string,
 };
 

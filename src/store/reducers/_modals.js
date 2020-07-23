@@ -2,7 +2,7 @@ import { SHOW_MODAL, HIDE_MODAL } from '../action-types';
 
 const initialState = {
   auth: { isVisible: false, data: null },
-  todo: { isVisible: false, data: null },
+  sugg: { isVisible: false, data: null },
 };
 
 export const modals = (state = initialState, action) => {

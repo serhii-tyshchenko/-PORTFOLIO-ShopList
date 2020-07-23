@@ -8,7 +8,7 @@ const SignInForm = (props) => {
     onSubmit,
     onChange,
     data: { email, password },
-    STR: { YOUR_EMAIL, YOUR_PASSWORD, SIGN_IN },
+    STR,
   } = props;
 
   return (
@@ -19,8 +19,9 @@ const SignInForm = (props) => {
           type="email"
           name="email"
           extraClassName="signin-form__input"
-          placeholder={YOUR_EMAIL}
+          placeholder={STR.YOUR_EMAIL}
           onChange={onChange}
+          autoComplete="current-email"
           required
         />
         <UIInput
@@ -28,16 +29,20 @@ const SignInForm = (props) => {
           name="password"
           extraClassName="signin-form__input"
           value={password}
-          placeholder={YOUR_PASSWORD}
+          placeholder={STR.YOUR_PASSWORD}
           onChange={onChange}
+          autoComplete="current-password"
           required
         />
         <div className="signin-form__btns">
-          <UIButton type="submit" btnType="primary" text={SIGN_IN} onClick={onSubmit} />
+          <UIButton type="submit" btnType="primary" text={STR.SIGN_IN} onClick={onSubmit} />
         </div>
       </form>
     </>
   );
+};
+SignInForm.defaultProps = {
+  STR: {},
 };
 
 SignInForm.propTypes = {
@@ -47,6 +52,7 @@ SignInForm.propTypes = {
   }).isRequired,
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
+  STR: PropTypes.shape(),
 };
 
 export { SignInForm };

@@ -7,7 +7,7 @@ import { Home } from './pages';
 function App() {
   const user = useSelector((state) => state.user);
   const theme = useSelector((state) => state.settings.theme);
-  document.querySelector('html').setAttribute('class', `theme-${theme}`);
+  document.documentElement.setAttribute('data-theme', theme);
   const { uid, isLogged } = user;
   const dispatch = useDispatch();
   useEffect(() => {
@@ -17,6 +17,7 @@ function App() {
       dispatch(getSettings(uid));
     }
   }, [uid]);
+
   return (
     <div className="App">
       <Home />
