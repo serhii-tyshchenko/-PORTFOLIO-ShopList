@@ -4,7 +4,7 @@ import { UIInput, UIIconButton } from 'modules/ui';
 import './ShoppingListForm.scss';
 
 const ShoppingListForm = (props) => {
-  const { onSubmit } = props;
+  const { onSubmit, STR } = props;
   const [itemTitle, setItemTitle] = useState('');
   function handleItemChange(evt) {
     setItemTitle(evt.target.value);
@@ -24,10 +24,10 @@ const ShoppingListForm = (props) => {
         extraClassName="shopping-list-form__input"
         value={itemTitle}
         onChange={handleItemChange}
-        placeholder="Add new item"
+        placeholder={STR.ENTER_ITEM}
         required
       />
-      <UIIconButton icon="plus" type="submit" extraClassName="shopping-list-form__btn" onClick={handleSubmit} />
+      <UIIconButton icon="plus" type="submit" title={STR.ADD_ITEM} extraClassName="shopping-list-form__btn" onClick={handleSubmit} />
     </form>
   );
 };
