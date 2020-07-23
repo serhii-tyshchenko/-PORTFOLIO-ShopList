@@ -99,4 +99,7 @@
   &--bell-off-empty::before {
     content: '\f1f7';
   }
+  &--heart:before {
+    content: '\e811';
+  }
 }

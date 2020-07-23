@@ -161,6 +161,12 @@
       "css": "user-o",
       "code": 62144,
       "src": "fontawesome"
+    },
+    {
+      "uid": "d73eceadda1f594cec0536087539afbf",
+      "css": "heart",
+      "code": 59409,
+      "src": "fontawesome"
     }
   ]
 }
