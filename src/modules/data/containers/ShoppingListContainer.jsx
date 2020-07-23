@@ -74,7 +74,7 @@ const ShoppingListContainer = () => {
         onBlur={handleBlur}
         STR={STR}
       />
-      <UIModal isVisible={sugg.isVisible} onClose={handleModalClose} title={STR.SUGGESTION_LIST}>
+      <UIModal isVisible={sugg.isVisible} onClose={handleModalClose} title={STR.FAVOURITES_LIST}>
         <SuggestionListContainer />
       </UIModal>
     </>
