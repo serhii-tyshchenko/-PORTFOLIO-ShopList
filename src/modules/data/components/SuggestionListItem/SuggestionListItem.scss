@@ -1,5 +1,5 @@
 @import '~styles/variables';
-.suggestion-list__item {
+.suggestion-list-item {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -9,10 +9,10 @@
   border-radius: 3px;
   color: var(--color-primary);
   background-color: var(--background-secondary);
-  &-add {
+  &__btn-add {
     margin-right: 10px;
   }
-  &-title {
+  &__title {
     flex-grow: 1;
     margin-right: 10px;
     padding: 0.25em 0;
