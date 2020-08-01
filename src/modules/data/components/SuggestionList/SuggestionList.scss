@@ -9,3 +9,8 @@
     width: 100%;
   }
 }
+@media screen and (max-width: $break-480) {
+  .suggestion-list {
+    max-height: calc(100vh - 96px);
+  }
+}

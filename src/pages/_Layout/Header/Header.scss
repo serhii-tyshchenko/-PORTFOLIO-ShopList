@@ -29,8 +29,18 @@
 }
 
 @media screen and (max-width: $break-480) {
-  .header__logo {
-    background: none;
-    padding-left: 0;
+  .header {
+    padding: 15px 0;
+    &__logo {
+      padding-left: 28px;
+      background-size: 20px;
+    }
+    &__title {
+      font-size: 1.5rem;
+    }
+    &__menu {
+      font-size: 1.25rem;
+      width: 120px;
+    }
   }
 }

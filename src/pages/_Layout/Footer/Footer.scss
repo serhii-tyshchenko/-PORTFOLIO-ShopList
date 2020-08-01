@@ -10,3 +10,9 @@
     justify-content: space-between;
   }
 }
+
+@media screen and (max-width: $break-480) {
+  .footer {
+    padding: 15px 0;
+  }
+}
