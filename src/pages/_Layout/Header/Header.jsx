@@ -1,6 +1,6 @@
 import React from 'react';
 import { AuthBtn } from 'modules/user';
-import { ThemeToggler } from 'modules/settings';
+import { ThemeToggler, LanguageSelector } from 'modules/settings';
 import { SuggestionListBtn } from 'modules/data';
 import './Header.scss';
 
@@ -11,6 +11,7 @@ const Header = () => (
         <span className="header__title">ShopList</span>
       </a>
       <div className="header__menu">
+        <LanguageSelector />
         <SuggestionListBtn />
         <ThemeToggler />
         <AuthBtn />
