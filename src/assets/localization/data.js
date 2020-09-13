@@ -6,7 +6,7 @@ const data = {
       SIGN_UP: 'Sign Up',
       SIGN_OUT: 'Sign Out',
       ADD_ITEM: 'Add',
-      ENTER_ITEM: 'Enter new item',
+      ENTER_ITEM: 'Enter new item, e.g Apple',
       AUTHENIFICATION: 'Authenification',
       YOUR_EMAIL: 'Your email',
       YOUR_PASSWORD: 'Your password',
@@ -17,7 +17,7 @@ const data = {
     },
   },
   ua: {
-    label: 'УКР',
+    label: 'UA',
     strings: {
       SIGN_IN: 'Увійти',
       SIGN_UP: 'Зареєструватись',
@@ -34,7 +34,7 @@ const data = {
     },
   },
   ru: {
-    label: 'РУС',
+    label: 'RU',
     strings: {
       SIGN_IN: 'Войти',
       SIGN_UP: 'Зарегистрироваться',
