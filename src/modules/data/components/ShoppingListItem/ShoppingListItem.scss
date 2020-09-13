@@ -3,7 +3,7 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   color: var(--color-primary);
   font-size: 1.2rem;
   border-radius: 5px;
@@ -13,8 +13,8 @@
   }
   // TODO Find solution for checkbox and remove btn width and height
   &-lb {
+    margin-right: 0.25rem;
     padding: 1em;
-    margin-right: 10px;
   }
   &-cb {
     cursor: pointer;
@@ -25,16 +25,16 @@
   }
   &-title {
     flex-grow: 1;
+    width: 100%;
+    margin-right: 10px;
     color: inherit;
     font-size: inherit;
     text-overflow: ellipsis;
     border: 0;
     background: inherit;
     overflow: hidden;
-    margin-right: 10px;
-    width: 100%;
   }
   &-btn {
-    padding: 1em;
+    padding: 0.5rem;
   }
 }
