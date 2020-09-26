@@ -1,35 +1,27 @@
 import React from 'react';
-import { UIIconButton } from 'modules/ui';
 import './ShoppingListItem.scss';
 
 const ShoppingListItem = (props) => {
   // TODO Add props validation
   const {
-    data: { id, title, isCompleted },
-    onCompleteClick,
-    onRemoveClick,
-    onBlur,
+    data: { id, title }, onRemoveClick,
   } = props;
 
   return (
-    <li id={id} className="shopping-list__item">
-      <label className="shopping-list__item-lb">
-        <input
-          type="checkbox"
-          className="shopping-list__item-cb"
-          checked={isCompleted}
-          onChange={onCompleteClick}
-        />
-      </label>
+    <li id={id} className="shopping-list-item">
       <input
         type="text"
-        className="shopping-list__item-title"
+        className="shopping-list-item__title"
         defaultValue={title}
-        onBlur={onBlur}
         maxLength="50"
         disabled
       />
-      <UIIconButton id={id} icon="cancel" onClick={onRemoveClick} extraClassName="shopping-list__item-btn" />
+      <input
+        id={id}
+        type="checkbox"
+        className="shopping-list-item__cb"
+        onChange={onRemoveClick}
+      />
     </li>
   );
 };

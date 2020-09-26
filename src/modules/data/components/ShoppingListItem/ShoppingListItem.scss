@@ -1,29 +1,21 @@
 @import '~styles/variables';
-.shopping-list__item {
+.shopping-list-item {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.75em 1em;
   color: var(--color-primary);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   border-radius: 5px;
   background-color: var(--background-secondary);
   &:last-child {
     margin-bottom: 0;
   }
-  // TODO Find solution for checkbox and remove btn width and height
-  &-lb {
-    margin-right: 0.25rem;
-    padding: 1em;
-  }
-  &-cb {
+  &__cb {
     cursor: pointer;
   }
-  &-cb:checked + &-title {
-    color: var(--color-secondary);
-    text-decoration: line-through;
-  }
-  &-title {
+  &__title {
     flex-grow: 1;
     width: 100%;
     margin-right: 10px;
@@ -33,8 +25,5 @@
     border: 0;
     background: inherit;
     overflow: hidden;
-  }
-  &-btn {
-    padding: 0.5rem;
   }
 }
