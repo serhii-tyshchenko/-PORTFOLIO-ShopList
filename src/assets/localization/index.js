@@ -1,10 +1,5 @@
-import { translations } from './translations';
+import { translations, languages } from './translations';
 
-const getLocalization = (lang) => translations[lang].strings;
-
-const languages = [...Object.entries(translations)].map((item) => ({
-  value: item[0],
-  label: item[1].label,
-}));
+const getLocalization = (lang) => translations[lang];
 
 export { getLocalization, languages };
