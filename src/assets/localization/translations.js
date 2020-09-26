@@ -1,4 +1,4 @@
-const data = {
+const translations = {
   en: {
     label: 'EN',
     strings: {
@@ -52,4 +52,4 @@ const data = {
   },
 };
 
-export default data;
+export { translations };
