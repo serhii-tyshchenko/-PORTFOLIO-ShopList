@@ -1,4 +1,5 @@
 import React from 'react';
+import { UICheckbox } from 'modules/ui';
 import './ShoppingListItem.scss';
 
 const ShoppingListItem = (props) => {
@@ -16,12 +17,7 @@ const ShoppingListItem = (props) => {
         maxLength="50"
         disabled
       />
-      <input
-        id={id}
-        type="checkbox"
-        className="shopping-list-item__cb"
-        onChange={onRemoveClick}
-      />
+      <UICheckbox onChange={onRemoveClick} />
     </li>
   );
 };

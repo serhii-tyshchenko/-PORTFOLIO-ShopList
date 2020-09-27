@@ -54,7 +54,8 @@ const ShoppingListContainer = () => {
   }
   function handleRemoveClick(evt) {
     const { id } = evt.target.closest('li');
-    const title = evt.target.previousSibling.value;
+    // TODO improve selection logic
+    const title = evt.target.closest('label').previousSibling.value;
     dispatch(removeItem(uid, id));
     const sugItem = suggestions.find((item) => item.title === title);
     dispatch(updateSuggestion(uid, { id: sugItem.id, inList: false }));

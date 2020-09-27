@@ -1,7 +1,7 @@
 @import '~styles/variables';
 .shopping-list-item {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 1rem;
   padding: 0.75em 1em;
@@ -11,9 +11,6 @@
   background-color: var(--background-secondary);
   &:last-child {
     margin-bottom: 0;
-  }
-  &__cb {
-    cursor: pointer;
   }
   &__title {
     flex-grow: 1;
