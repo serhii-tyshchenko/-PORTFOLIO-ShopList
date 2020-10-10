@@ -1,10 +1,14 @@
 import React from 'react';
-import { ShoppingListItem, ShoppingListForm } from 'modules/data';
+import { ShoppingListItem } from './ShoppingListItem';
+import { ShoppingListForm } from './ShoppingListForm';
 import './ShoppingList.scss';
 
-const ShoppingList = ({
-  data, onCompleteClick, onRemoveClick, onBlur, onAddClick, onFavClick, STR,
-}) => (
+const ShoppingList = (props) => {
+  const {
+    data, onCompleteClick, onRemoveClick, onBlur, onAddClick, onFavClick, STR,
+  } = props;
+
+  return (
     <div className="shopping-list">
       <ShoppingListForm onSubmit={onAddClick} onFavClick={onFavClick} STR={STR} />
       <ul className="shopping-list__list">
@@ -20,5 +24,6 @@ const ShoppingList = ({
       </ul>
     </div>
   );
+};
 
 export { ShoppingList };
