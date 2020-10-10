@@ -25,7 +25,7 @@ const SuggestionList = (props) => {
 };
 
 SuggestionList.propTypes = {
-  data: PropTypes.shape.isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   onRemoveClick: PropTypes.func.isRequired,
   onAddClick: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,

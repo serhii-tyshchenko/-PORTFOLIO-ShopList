@@ -41,7 +41,7 @@ const ShoppingListForm = (props) => {
 
 ShoppingListForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  STR: PropTypes.shape.isRequired,
+  STR: PropTypes.shape().isRequired,
 };
 
 export { ShoppingListForm };

@@ -24,7 +24,7 @@ const ShoppingListItem = (props) => {
 };
 
 ShoppingListItem.propTypes = {
-  data: PropTypes.shape.isRequired,
+  data: PropTypes.shape().isRequired,
   onRemoveClick: PropTypes.func.isRequired,
 };
 
