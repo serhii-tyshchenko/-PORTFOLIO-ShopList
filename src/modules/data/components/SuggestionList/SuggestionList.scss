@@ -1,16 +1,13 @@
 @import '~styles/variables';
 .suggestion-list {
   max-height: 70vh;
-  overflow-y: auto;
   padding-right: 10px;
+  overflow-y: auto;
 }
-@media screen and (max-width: $break-640) {
-  .suggestion-list {
-    width: 100%;
-  }
-}
+
 @media screen and (max-width: $break-480) {
   .suggestion-list {
+    width: 100%;
     max-height: calc(100vh - 96px);
   }
 }

@@ -5,7 +5,7 @@ import './ThemeButton.scss';
 
 const ThemeButton = (props) => {
   const { theme, onClick, STR } = props;
-  const btnIcon = theme === 'light' ? 'sun' : 'moon';
+  const btnIcon = theme === 'light' ? 'moon' : 'sun';
   return <UIIconButton icon={btnIcon} onClick={onClick} title={STR.TOGGLE_THEME} />;
 };
 

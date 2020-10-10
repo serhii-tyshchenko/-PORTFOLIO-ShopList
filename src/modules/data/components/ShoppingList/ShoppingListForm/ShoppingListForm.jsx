@@ -6,6 +6,7 @@ import './ShoppingListForm.scss';
 const ShoppingListForm = (props) => {
   const { onSubmit, STR } = props;
   const [itemTitle, setItemTitle] = useState('');
+
   function handleItemChange(evt) {
     setItemTitle(evt.target.value);
   }
@@ -27,13 +28,20 @@ const ShoppingListForm = (props) => {
         placeholder={STR.ENTER_ITEM}
         required
       />
-      <UIIconButton icon="plus" type="submit" title={STR.ADD_ITEM} extraClassName="shopping-list-form__btn" onClick={handleSubmit} />
+      <UIIconButton
+        icon="plus"
+        type="submit"
+        title={STR.ADD_ITEM}
+        extraClassName="shopping-list-form__btn"
+        onClick={handleSubmit}
+      />
     </form>
   );
 };
 
 ShoppingListForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  STR: PropTypes.shape().isRequired,
 };
 
 export { ShoppingListForm };

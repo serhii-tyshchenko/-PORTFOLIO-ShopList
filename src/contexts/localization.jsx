@@ -6,11 +6,12 @@ import { getLocalization } from 'assets/localization';
 const Localization = createContext();
 Localization.displayName = 'Localization';
 
-const LocalizationProvider = (props) => {
-  const { language } = useSelector((state) => state.settings);
+const LocalizationProvider = ({ children }) => {
+  const language = useSelector((state) => state.settings.language);
+
   return (
     <Localization.Provider value={getLocalization(language)}>
-      {props.children}
+      {children}
     </Localization.Provider>
   );
 };

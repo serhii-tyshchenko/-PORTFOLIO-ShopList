@@ -21,85 +21,34 @@
     text-transform: none;
     text-decoration: inherit;
   }
-  &--user::before {
+  &--user:before {
     content: '\e800';
   }
-  &--user-o::before {
-    content: '\f2c0';
-  }
-  &--pin-outline::before {
-    content: '\e801';
-  }
-  &--pin::before {
-    content: '\e802';
-  }
-  &--trash::before {
+  &--trash:before {
     content: '\e803';
   }
-  &--adjust::before {
-    content: '\e804';
-  }
-  &--calendar::before {
-    content: '\e805';
-  }
-  &--plus::before {
+  &--plus:before {
     content: '\e806';
   }
-  &--cancel::before {
+  &--cancel:before {
     content: '\e807';
-  }
-  &--star::before {
-    content: '\e808';
-  }
-  &--star-empty::before {
-    content: '\e809';
-  }
-  &--pencil::before {
-    content: '\e80a';
-  }
-  &--bell::before {
-    content: '\e80b';
-  }
-  &--left-open::before {
-    content: '\e80c';
-  }
-  &--right-open::before {
-    content: '\e80d';
-  }
-  &--resize-full::before {
-    content: '\e80e';
-  }
-  &--left-big::before {
-    content: '\e80f';
-  }
-  &--right-big::before {
-    content: '\e810';
-  }
-  &--color-adjust::before {
-    content: '\f020';
-  }
-  &--filter::before {
-    content: '\f0b0';
-  }
-  &--bell-alt::before {
-    content: '\f0f3';
-  }
-  &--sun::before {
-    content: '\f185';
-  }
-  &--moon::before {
-    content: '\f186';
-  }
-  &--google::before {
-    content: '\f1a0';
-  }
-  &--bell-off::before {
-    content: '\f1f6';
-  }
-  &--bell-off-empty::before {
-    content: '\f1f7';
   }
   &--heart:before {
     content: '\e811';
+  }
+  &--heart-empty:before {
+    content: '\e812';
+  }
+  &--sun:before {
+    content: '\f185';
+  }
+  &--moon:before {
+    content: '\f186';
+  }
+  &--google:before {
+    content: '\f1a0';
+  }
+  &--user-o:before {
+    content: '\f2c0';
   }
 }

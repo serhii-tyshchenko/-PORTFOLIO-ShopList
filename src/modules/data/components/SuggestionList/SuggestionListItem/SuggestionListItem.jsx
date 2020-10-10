@@ -1,5 +1,7 @@
 import React from 'react';
 import { UIIconButton } from 'modules/ui';
+import PropTypes from 'prop-types';
+
 import './SuggestionListItem.scss';
 
 const SuggestionListItem = (props) => {
@@ -28,6 +30,13 @@ const SuggestionListItem = (props) => {
       <UIIconButton id={id} icon="trash" onClick={onRemoveClick} />
     </li>
   );
+};
+
+SuggestionListItem.propTypes = {
+  data: PropTypes.shape().isRequired,
+  onRemoveClick: PropTypes.func.isRequired,
+  onAddClick: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
 };
 
 export { SuggestionListItem };

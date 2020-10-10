@@ -1,4 +1,5 @@
 .shopping-list-form {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,9 +8,12 @@
   margin-bottom: 20px;
   &__input {
     flex-grow: 1;
-    margin-right: 0.5rem;
+    padding-right: 2.75em;
   }
   &__btn {
-    font-size: 2rem;
+    position: absolute;
+    right: 0.25rem;
+    font-size: 1.75rem;
+    outline: none;
   }
 }

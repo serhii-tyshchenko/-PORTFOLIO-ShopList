@@ -10,12 +10,12 @@
   }
   &__logo {
     padding-left: 40px;
+    color: var(--color-accent);
     text-decoration: none;
     background-image: url('~logo.svg');
     background-repeat: no-repeat;
     background-position: left 48%;
     background-size: 32px;
-    color: var(--color-accent);
   }
   &__title {
     font: bold 2rem $font-secondary;
@@ -23,7 +23,7 @@
   &__menu {
     display: flex;
     justify-content: space-between;
-    width: 150px;
+    width: 200px;
     font-size: 1.5rem;
   }
 }
@@ -39,8 +39,8 @@
       font-size: 1.5rem;
     }
     &__menu {
+      width: 150px;
       font-size: 1.25rem;
-      width: 120px;
     }
   }
 }
