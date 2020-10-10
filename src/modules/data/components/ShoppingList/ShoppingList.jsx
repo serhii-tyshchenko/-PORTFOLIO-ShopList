@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ShoppingListItem } from './ShoppingListItem';
 import { ShoppingListForm } from './ShoppingListForm';
+
 import './ShoppingList.scss';
 
 const ShoppingList = (props) => {
@@ -24,6 +26,16 @@ const ShoppingList = (props) => {
       </ul>
     </div>
   );
+};
+
+ShoppingList.propTypes = {
+  data: PropTypes.shape.isRequired,
+  onCompleteClick: PropTypes.func.isRequired,
+  onRemoveClick: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
+  onAddClick: PropTypes.func.isRequired,
+  onFavClick: PropTypes.func.isRequired,
+  STR: PropTypes.shape.isRequired,
 };
 
 export { ShoppingList };

@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { SuggestionListItem } from './SuggestionListItem';
+
 import './SuggestionList.scss';
 
 const SuggestionList = (props) => {
@@ -20,6 +22,13 @@ const SuggestionList = (props) => {
       ))}
     </ul>
   );
+};
+
+SuggestionList.propTypes = {
+  data: PropTypes.shape.isRequired,
+  onRemoveClick: PropTypes.func.isRequired,
+  onAddClick: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
 };
 
 export { SuggestionList };

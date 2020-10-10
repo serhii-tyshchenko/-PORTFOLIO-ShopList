@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { UICheckbox } from 'modules/ui';
+
 import './ShoppingListItem.scss';
 
 const ShoppingListItem = (props) => {
-  // TODO Add props validation
   const {
     data: { id, title }, onRemoveClick,
   } = props;
@@ -20,6 +21,11 @@ const ShoppingListItem = (props) => {
       <UICheckbox onChange={onRemoveClick} />
     </li>
   );
+};
+
+ShoppingListItem.propTypes = {
+  data: PropTypes.shape.isRequired,
+  onRemoveClick: PropTypes.func.isRequired,
 };
 
 export { ShoppingListItem };
