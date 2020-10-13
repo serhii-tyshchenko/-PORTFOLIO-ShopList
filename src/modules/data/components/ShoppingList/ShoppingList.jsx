@@ -7,7 +7,7 @@ import './ShoppingList.scss';
 
 const ShoppingList = (props) => {
   const {
-    data, onCompleteClick, onRemoveClick, onAddClick, STR,
+    data, onCompleteClick, onAddClick, STR,
   } = props;
 
   return (
@@ -19,7 +19,6 @@ const ShoppingList = (props) => {
             key={item.id}
             data={item}
             onCompleteClick={onCompleteClick}
-            onRemoveClick={onRemoveClick}
           />
         ))}
       </ul>
@@ -30,7 +29,6 @@ const ShoppingList = (props) => {
 ShoppingList.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   onCompleteClick: PropTypes.func.isRequired,
-  onRemoveClick: PropTypes.func.isRequired,
   onAddClick: PropTypes.func.isRequired,
   STR: PropTypes.shape().isRequired,
 };

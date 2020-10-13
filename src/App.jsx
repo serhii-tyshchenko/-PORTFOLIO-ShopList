@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getItems, getSuggestions, getSettings } from 'store/actions';
+import { getItems, getSettings } from 'store/actions';
 import { AuthContainer } from 'modules/user';
 import { Home } from './pages';
 
@@ -13,7 +13,6 @@ function App() {
   useEffect(() => {
     if (isLogged) {
       dispatch(getItems(uid));
-      dispatch(getSuggestions(uid));
       dispatch(getSettings(uid));
     }
   }, [uid]);

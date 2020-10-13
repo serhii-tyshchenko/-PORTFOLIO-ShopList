@@ -3,65 +3,39 @@ import { Localization } from 'contexts';
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  removeItem,
   updateItem,
   addItem,
-  addSuggestion,
-  updateSuggestion,
   hideModal,
 } from 'store/actions';
 import { UIModal } from 'modules/ui';
-import { SuggestionListContainer } from 'modules/data';
+import { FavouritesListContainer } from 'modules/data';
 import { ShoppingList } from '../components';
 
-const isItemExists = (arr, value) => arr.some((item) => item.title.toUpperCase() === value.toUpperCase());
+// const isItemExists = (arr, value) => arr.some((item) => item.title.toUpperCase() === value.toUpperCase());
 
 const ShoppingListContainer = () => {
   const dispatch = useDispatch();
   const {
-    data, suggestions, user: { uid }, modals: { sugg },
+    user: { uid }, modals,
   } = useSelector((state) => state);
+  const data = useSelector((state) => state.data.filter((item) => item.inList === true));
   const STR = useContext(Localization);
 
   function handleAddClick(title) {
-    if (!isItemExists(data, title)) {
-      const newItem = {
-        id: uuidv4(),
-        title,
-        isCompleted: false,
-      };
-      dispatch(addItem(uid, newItem));
-      if (!isItemExists(suggestions, title)) {
-        dispatch(
-          addSuggestion(uid, {
-            id: newItem.id,
-            title,
-            inList: true,
-          }),
-        );
-      }
-    }
+    dispatch(addItem(uid, { id: uuidv4(), title, inList: true }));
   }
+
   function handleCompleteClick(evt) {
     const { id } = evt.target.closest('li');
-    const isCompleted = evt.target.checked;
-    dispatch(updateItem(uid, { id, isCompleted }));
+    dispatch(updateItem(uid, { id, inList: false }));
   }
   function handleBlur(evt) {
     const { id } = evt.target.closest('li');
     const title = evt.target.value;
     dispatch(updateItem(uid, { id, title }));
   }
-  function handleRemoveClick(evt) {
-    const { id } = evt.target.closest('li');
-    // TODO improve selection logic
-    const title = evt.target.closest('label').previousSibling.value;
-    dispatch(removeItem(uid, id));
-    const sugItem = suggestions.find((item) => item.title === title);
-    dispatch(updateSuggestion(uid, { id: sugItem.id, inList: false }));
-  }
   function handleModalClose() {
-    dispatch(hideModal({ modalName: 'sugg', data: null }));
+    dispatch(hideModal({ modalName: 'fav', data: null }));
   }
 
   return (
@@ -69,13 +43,16 @@ const ShoppingListContainer = () => {
       <ShoppingList
         data={data}
         onCompleteClick={handleCompleteClick}
-        onRemoveClick={handleRemoveClick}
         onAddClick={handleAddClick}
         onBlur={handleBlur}
         STR={STR}
       />
-      <UIModal isVisible={sugg.isVisible} onClose={handleModalClose} title={STR.FAVORITES_LIST}>
-        <SuggestionListContainer />
+      <UIModal
+        isVisible={modals.fav.isVisible}
+        onClose={handleModalClose}
+        title={STR.FAVORITES_LIST}
+      >
+        <FavouritesListContainer />
       </UIModal>
     </>
   );

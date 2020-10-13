@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SuggestionListItem } from './SuggestionListItem';
+import { FavouritesListItem } from './FavouritesListItem';
 
-import './SuggestionList.scss';
+import './FavouritesList.scss';
 
-const SuggestionList = (props) => {
+const FavouritesList = (props) => {
   const {
     data, onRemoveClick, onAddClick, onBlur,
   } = props;
 
   return (
-    <ul className="suggestion-list">
+    <ul className="favourites-list">
       {data.map((item) => (
-        <SuggestionListItem
+        <FavouritesListItem
           key={item.id}
           data={item}
           onRemoveClick={onRemoveClick}
@@ -24,11 +24,11 @@ const SuggestionList = (props) => {
   );
 };
 
-SuggestionList.propTypes = {
+FavouritesList.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   onRemoveClick: PropTypes.func.isRequired,
   onAddClick: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,
 };
 
-export { SuggestionList };
+export { FavouritesList };

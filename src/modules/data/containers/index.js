@@ -1,3 +1,3 @@
 export { ShoppingListContainer } from './ShoppingListContainer';
-export { SuggestionListContainer } from './SuggestionListContainer';
-export { SuggestionListBtn } from './SuggestionListBtn';
+export { FavouritesListContainer } from './FavouritesListContainer';
+export { FavouritesBtn } from './FavouritesBtn';

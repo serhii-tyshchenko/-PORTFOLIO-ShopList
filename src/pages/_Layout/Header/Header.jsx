@@ -1,7 +1,7 @@
 import React from 'react';
 import { AuthBtn } from 'modules/user';
 import { ThemeToggler, LanguageSelector } from 'modules/settings';
-import { SuggestionListBtn } from 'modules/data';
+import { FavouritesBtn } from 'modules/data';
 import './Header.scss';
 
 const Header = () => (
@@ -12,7 +12,7 @@ const Header = () => (
       </div>
       <div className="header__menu">
         <LanguageSelector />
-        <SuggestionListBtn />
+        <FavouritesBtn />
         <ThemeToggler />
         <AuthBtn />
       </div>

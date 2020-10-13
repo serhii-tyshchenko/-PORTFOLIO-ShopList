@@ -6,7 +6,7 @@ import './ShoppingListItem.scss';
 
 const ShoppingListItem = (props) => {
   const {
-    data: { id, title }, onRemoveClick,
+    data: { id, title }, onCompleteClick,
   } = props;
 
   return (
@@ -18,14 +18,14 @@ const ShoppingListItem = (props) => {
         maxLength="50"
         disabled
       />
-      <UICheckbox onChange={onRemoveClick} />
+      <UICheckbox onChange={onCompleteClick} />
     </li>
   );
 };
 
 ShoppingListItem.propTypes = {
   data: PropTypes.shape().isRequired,
-  onRemoveClick: PropTypes.func.isRequired,
+  onCompleteClick: PropTypes.func.isRequired,
 };
 
 export { ShoppingListItem };
