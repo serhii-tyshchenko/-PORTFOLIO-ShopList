@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateItem, removeItem } from 'store/actions';
 import { sortByABC } from 'assets/utils';
@@ -29,9 +29,9 @@ const FavouritesListContainer = () => {
     <>
       <FavouritesList
         data={data}
-        onRemoveClick={handleRemoveClick}
-        onAddClick={handleAddClick}
-        onBlur={handleBlur}
+        onRemoveClick={useCallback(handleRemoveClick, [dispatch, userId])}
+        onAddClick={useCallback(handleAddClick, [dispatch, userId])}
+        onBlur={useCallback(handleBlur, [dispatch, userId])}
       />
     </>
   );

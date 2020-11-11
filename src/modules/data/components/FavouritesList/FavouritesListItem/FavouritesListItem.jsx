@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import './FavouritesListItem.scss';
 
-const FavouritesListItem = (props) => {
+const FavouritesListItem = React.memo((props) => {
   const {
     data: { id, title },
     onRemoveClick,
@@ -30,7 +30,7 @@ const FavouritesListItem = (props) => {
       <UIIconButton id={id} icon="trash" onClick={onRemoveClick} />
     </li>
   );
-};
+});
 
 FavouritesListItem.propTypes = {
   data: PropTypes.shape().isRequired,
@@ -38,5 +38,6 @@ FavouritesListItem.propTypes = {
   onAddClick: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,
 };
+
 
 export { FavouritesListItem };

@@ -4,7 +4,8 @@ import { UICheckbox } from 'modules/ui';
 
 import './ShoppingListItem.scss';
 
-const ShoppingListItem = (props) => {
+
+const ShoppingListItem = React.memo((props) => {
   const {
     data: { id, title }, onCompleteClick,
   } = props;
@@ -21,7 +22,7 @@ const ShoppingListItem = (props) => {
       <UICheckbox onChange={onCompleteClick} />
     </li>
   );
-};
+});
 
 ShoppingListItem.propTypes = {
   data: PropTypes.shape().isRequired,

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { UIInput, UIIconButton } from 'modules/ui';
 import './ShoppingListForm.scss';
 
-const ShoppingListForm = (props) => {
+const ShoppingListForm = React.memo((props) => {
   const { onSubmit, STR } = props;
   const [itemTitle, setItemTitle] = useState('');
 
@@ -37,7 +37,7 @@ const ShoppingListForm = (props) => {
       />
     </form>
   );
-};
+});
 
 ShoppingListForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
