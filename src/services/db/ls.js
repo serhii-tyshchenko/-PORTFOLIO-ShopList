@@ -1,4 +1,4 @@
-const keyName = 'MyShoppingList';
+const keyName = process.env.REACT_APP_APP_NAME;
 
 export const loadState = () => {
   try {
