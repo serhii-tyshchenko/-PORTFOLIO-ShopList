@@ -15,7 +15,7 @@ function App() {
       dispatch(getItems(uid));
       dispatch(getSettings(uid));
     }
-  }, [uid]);
+  }, [dispatch, isLogged, uid]);
 
   return (
     <div className="App">

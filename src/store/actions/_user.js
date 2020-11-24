@@ -1,4 +1,4 @@
-import { db, ls } from 'services';
+import { db } from 'services';
 import { SIGN_IN, SIGN_OUT, ERROR } from '../action-types';
 
 function actionError(message) {
@@ -38,9 +38,10 @@ export const signInWithGoogle = () => (dispatch) => {
 
 export const signOut = () => (dispatch) => {
   db.signOut()
-    .then(() => dispatch({
-      type: SIGN_OUT,
-    }))
-    .then(() => ls.clearState())
+    .then(() =>
+      dispatch({
+        type: SIGN_OUT,
+      })
+    )
     .catch((error) => dispatch(actionError(error.message)));
 };
