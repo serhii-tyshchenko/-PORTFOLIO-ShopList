@@ -3,12 +3,13 @@
 ## Features
 
 - Dark/light theme
-- Suggestions list
+- Favourites list
 - Cloud syncronization
 
 ## Tech stack
--   Hooks
--   Redux
--   Router
--   Firebase
--   Local Storage
+
+- Hooks
+- Redux
+- Router
+- Firebase
+- Local Storage
