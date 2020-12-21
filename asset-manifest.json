@@ -1,24 +1,22 @@
 {
   "files": {
-    "main.css": "/ShopList/static/css/main.2d2cc551.chunk.css",
-    "main.js": "/ShopList/static/js/main.74fe1225.chunk.js",
-    "main.js.map": "/ShopList/static/js/main.74fe1225.chunk.js.map",
-    "runtime-main.js": "/ShopList/static/js/runtime-main.a88a2fde.js",
-    "runtime-main.js.map": "/ShopList/static/js/runtime-main.a88a2fde.js.map",
-    "static/js/2.2bd848b4.chunk.js": "/ShopList/static/js/2.2bd848b4.chunk.js",
-    "static/js/2.2bd848b4.chunk.js.map": "/ShopList/static/js/2.2bd848b4.chunk.js.map",
-    "index.html": "/ShopList/index.html",
-    "precache-manifest.18f762f247e11b43cfd38db7f2c79836.js": "/ShopList/precache-manifest.18f762f247e11b43cfd38db7f2c79836.js",
-    "service-worker.js": "/ShopList/service-worker.js",
-    "static/css/main.2d2cc551.chunk.css.map": "/ShopList/static/css/main.2d2cc551.chunk.css.map",
-    "static/js/2.2bd848b4.chunk.js.LICENSE.txt": "/ShopList/static/js/2.2bd848b4.chunk.js.LICENSE.txt",
-    "static/media/index.scss": "/ShopList/static/media/fontello.c31f96be.ttf",
-    "static/media/Header.scss": "/ShopList/static/media/logo.3b8e113c.svg"
+    "main.css": "/-PORTFOLIO-ShopList/static/css/main.758b5ec4.chunk.css",
+    "main.js": "/-PORTFOLIO-ShopList/static/js/main.7aafe42c.chunk.js",
+    "main.js.map": "/-PORTFOLIO-ShopList/static/js/main.7aafe42c.chunk.js.map",
+    "runtime-main.js": "/-PORTFOLIO-ShopList/static/js/runtime-main.0a404c08.js",
+    "runtime-main.js.map": "/-PORTFOLIO-ShopList/static/js/runtime-main.0a404c08.js.map",
+    "static/js/2.526194b6.chunk.js": "/-PORTFOLIO-ShopList/static/js/2.526194b6.chunk.js",
+    "static/js/2.526194b6.chunk.js.map": "/-PORTFOLIO-ShopList/static/js/2.526194b6.chunk.js.map",
+    "index.html": "/-PORTFOLIO-ShopList/index.html",
+    "static/css/main.758b5ec4.chunk.css.map": "/-PORTFOLIO-ShopList/static/css/main.758b5ec4.chunk.css.map",
+    "static/js/2.526194b6.chunk.js.LICENSE.txt": "/-PORTFOLIO-ShopList/static/js/2.526194b6.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/-PORTFOLIO-ShopList/static/media/fontello.1611053f.ttf",
+    "static/media/Header.scss": "/-PORTFOLIO-ShopList/static/media/logo.2b4fc0d7.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a88a2fde.js",
-    "static/js/2.2bd848b4.chunk.js",
-    "static/css/main.2d2cc551.chunk.css",
-    "static/js/main.74fe1225.chunk.js"
+    "static/js/runtime-main.0a404c08.js",
+    "static/js/2.526194b6.chunk.js",
+    "static/css/main.758b5ec4.chunk.css",
+    "static/js/main.7aafe42c.chunk.js"
   ]
 }
