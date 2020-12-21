@@ -38,10 +38,6 @@ export const signInWithGoogle = () => (dispatch) => {
 
 export const signOut = () => (dispatch) => {
   db.signOut()
-    .then(() =>
-      dispatch({
-        type: SIGN_OUT,
-      })
-    )
+    .then(() => dispatch({ type: SIGN_OUT }))
     .catch((error) => dispatch(actionError(error.message)));
 };

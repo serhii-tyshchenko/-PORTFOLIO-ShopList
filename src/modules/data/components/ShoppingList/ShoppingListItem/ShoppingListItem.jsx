@@ -4,7 +4,6 @@ import { UICheckbox } from 'modules/ui';
 
 import './ShoppingListItem.scss';
 
-
 const ShoppingListItem = React.memo((props) => {
   const {
     data: { id, title }, onCompleteClick,

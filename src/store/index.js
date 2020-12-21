@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 import { createStore, applyMiddleware, compose } from 'redux';
 import * as LS from 'services/db/ls';
 import thunk from 'redux-thunk';
