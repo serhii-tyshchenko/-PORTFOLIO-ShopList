@@ -8,7 +8,7 @@ const Header = () => (
   <header className="header">
     <div className="header__content wrapper">
       <div className="header__logo">
-        <span className="header__title">{process.env.REACT_APP_APP_NAME}</span>
+        <span className="header__title">{process.env.REACT_APP_NAME}</span>
       </div>
       <div className="header__menu">
         <LanguageSelector />
