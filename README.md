@@ -1,4 +1,4 @@
-# ShopList
+# MyShoppingList
 
 ## Features
 
