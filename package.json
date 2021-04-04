@@ -18,7 +18,7 @@
     "react-dom": "latest",
     "react-redux": "latest",
     "react-router-dom": "latest",
-    "react-scripts": "^3.4.3",
+    "react-scripts": "^4.0.3",
     "redux": "latest",
     "redux-thunk": "latest",
     "uuid": "latest"
@@ -36,9 +36,9 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ],
     "development": [
       "last 1 chrome version",
@@ -47,8 +47,7 @@
     ]
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.8.0",
+    "@babel/eslint-parser": "^7.13.14",
     "eslint-config-airbnb": "latest",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
